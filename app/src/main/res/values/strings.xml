@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">Ecommerce</string>
+    <string name="login">Login to your account</string>
+    <string name="email">Email</string>
+    <string name="password">Password</string>
+    <string name="forgotpassword">FORGOT PASSWORD?</string>
+    <string name="login_btn">LOGIN</string>
+    <string name="newOnEcommerce">New on Ecommerce?</string>
+    <string name="creatAnAccount">CREATE AN ANCCOUNT</string>
+    <string name="create_acount">Create Account</string>
+    <string name="title_activity_main2">MainActivity2</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+</resources>
