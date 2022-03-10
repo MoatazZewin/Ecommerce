@@ -10,6 +10,7 @@ import android.widget.EditText
 import android.widget.ImageView
 import android.widget.TextView
 import com.example.ecommerce.databinding.ActivityCreateAccountBinding
+import com.example.ui.activity.Login
 
 
 class CreateAccount : AppCompatActivity() {
@@ -51,6 +52,7 @@ class CreateAccount : AppCompatActivity() {
 //        txtpass = findViewById(R.id.textPass)
 //        txtPassConfirm = findViewById(R.id.textConfirmPass)
 //        txtEmail = findViewById(R.id.textEmail)
+
 
 
     }

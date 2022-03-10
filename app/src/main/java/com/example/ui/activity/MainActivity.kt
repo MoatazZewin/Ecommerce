@@ -17,7 +17,7 @@ class MainActivity : AppCompatActivity() {
         homeFragment = HomeFragment()
         meFragment = MeFragment()
         categoryFragment = CategoryFragment()
-        supportFragmentManager.beginTransaction().replace(R.id.fragment_container, homeFragment).commit()
+       supportFragmentManager.beginTransaction().replace(R.id.fragment_container, homeFragment).commit()
         bottomNagationView.setOnItemSelectedListener {
             when (it.itemId)
             {

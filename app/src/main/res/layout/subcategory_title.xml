@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_marginLeft="5dp">
+<TextView
+    android:id="@+id/subCategoryTitle"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toTopOf="parent"
+    tools:text="shoes"
+    android:textColor="@color/black"
+    android:textSize="17sp"
+    android:paddingBottom="3dp"
+    android:paddingTop="10dp"
+    android:textStyle="bold"
+    android:paddingRight="20dp"
+    android:paddingLeft="20dp"
+    android:layout_marginRight="30dp"
+    android:layout_marginTop="20dp"
+    />
+    <TextView
+        android:id="@+id/underLine"
+        android:layout_width="60dp"
+        android:layout_height="3dp"
+        app:layout_constraintStart_toStartOf="@id/subCategoryTitle"
+        app:layout_constraintEnd_toEndOf="@id/subCategoryTitle"
+        app:layout_constraintTop_toBottomOf="@id/subCategoryTitle"
+        android:background="@color/white"
+        />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
