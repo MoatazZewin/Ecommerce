@@ -38,8 +38,8 @@ class ProductFragment : Fragment(),ProductsAdapter.OnProductClickListner {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         brandViewModel=ViewModelProvider(requireActivity())[BrandViewModel::class.java]
-        brandViewModel.liveDataAllProducts.observe(requireActivity(),{
-            productsAdapter= ProductsAdapter(requireContext(),this)
+        brandViewModel.liveDataAllProducts.observe(viewLifecycleOwner,{
+            productsAdapter= ProductsAdapter(requireActivity(),this)
             productsAdapter.addList(it.products)
 
             binding.productRecycler.adapter=productsAdapter

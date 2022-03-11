@@ -39,7 +39,7 @@ class HomeFragment : Fragment(),AdapterBrand.OnBrandClickListner {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         brandViewModel=ViewModelProvider(requireActivity())[BrandViewModel::class.java]
-        brandViewModel.liveDataResponse.observe(requireActivity(),{
+        brandViewModel.liveDataResponse.observe(viewLifecycleOwner,{
             adapterBrand= AdapterBrand(requireContext(),this)
             adapterBrand.addList(it.smartCollections)
             binding.recyclerBrand.adapter=adapterBrand

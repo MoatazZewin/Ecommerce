@@ -23,7 +23,7 @@
                 tools:context=".ui.productDetailsActivity.ProductDetailsActivity">
 
 
-                <com.makeramen.roundedimageview.RoundedImageView
+                <androidx.viewpager2.widget.ViewPager2
                     android:id="@+id/viewPagerMain"
                     android:layout_width="match_parent"
                     android:layout_height="250dp"

@@ -26,7 +26,9 @@ class ProductDetail : Fragment() {
         brandViewModel=ViewModelProvider(requireActivity())[BrandViewModel::class.java]
         pagerAdapter= PagerAdapter(requireContext())
         brandViewModel.liveDataproductDetail.observe(requireActivity(),{
+
             pagerAdapter.setContentList(it.product!!.images)
+            binding.viewPagerMain.adapter=pagerAdapter
             binding.qty.text=it.product!!.bodyHtml
             binding.productTitle.text=it.product!!.title
             binding.vendorEditable.text=it.product!!.vendor

@@ -9,6 +9,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.example.ecommerce.R
 import com.example.model.dataClass.productdetail.Images
+import com.makeramen.roundedimageview.RoundedImageView
 
 class PagerAdapter (val context: Context) : RecyclerView.Adapter<PagerAdapter.ImageViewHolder>() {
 
@@ -21,7 +22,7 @@ class PagerAdapter (val context: Context) : RecyclerView.Adapter<PagerAdapter.Im
     }
 
     inner class ImageViewHolder(view: View) : RecyclerView.ViewHolder(view) {
-        var imageView = itemView.findViewById<ImageView>(R.id.imageDetail)
+        var imageView = itemView.findViewById<RoundedImageView>(R.id.imageDetail)
 
     }
 

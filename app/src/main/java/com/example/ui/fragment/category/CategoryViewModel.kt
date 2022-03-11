@@ -6,6 +6,7 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.example.CategoryResponse
 import com.example.model.retrofit.RetrofitInstance
+import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.cancel
 import kotlinx.coroutines.launch
 
@@ -29,7 +30,7 @@ class CategoryViewModel:ViewModel() {
 
     }
     private fun getWomanProductsList() {
-        viewModelScope.launch {
+        viewModelScope.launch(Dispatchers.IO) {
             val repo = categoryRepository.getWomanProducts()
             if (repo.isSuccessful){
                 productResponse.postValue(repo.body())
@@ -38,7 +39,7 @@ class CategoryViewModel:ViewModel() {
         }
     }
     private fun getKidsProductsList() {
-        viewModelScope.launch {
+        viewModelScope.launch(Dispatchers.IO) {
             val repo = categoryRepository.getKidsProducts()
             if (repo.isSuccessful){
                 kidsResponse.postValue(repo.body())
@@ -49,7 +50,7 @@ class CategoryViewModel:ViewModel() {
         }
     }
     private fun getMenProductsList() {
-        viewModelScope.launch {
+        viewModelScope.launch(Dispatchers.IO) {
             val repo = categoryRepository.getMenProducts()
             if (repo.isSuccessful){
                 menResponse.postValue(repo.body())
@@ -60,7 +61,7 @@ class CategoryViewModel:ViewModel() {
         }
     }
     private fun getOnSaleProductsList() {
-        viewModelScope.launch {
+        viewModelScope.launch(Dispatchers.IO) {
             val repo = categoryRepository.getOnSaleProducts()
             if (repo.isSuccessful){
                 salesResponse.postValue(repo.body())
