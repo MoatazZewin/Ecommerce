@@ -6,26 +6,33 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.findNavController
 import com.example.ecommerce.HomeFragment
 import com.example.ecommerce.R
 import com.example.ecommerce.databinding.FragmentProductBinding
+import com.example.model.dataClass.product.Product
 import com.example.ui.adapter.ProductsAdapter
+import com.example.ui.fragment.home.ProductDetail
 import com.example.ui.viewmodel.BrandViewModel
 
 
-class ProductFragment : Fragment(),ProductsAdapter.OnBrandClickListner {
+class ProductFragment : Fragment(),ProductsAdapter.OnProductClickListner {
 
-    private lateinit var binding:FragmentProductBinding
+    private var _binding:FragmentProductBinding? = null
     private lateinit var brandViewModel: BrandViewModel
     private lateinit var productsAdapter: ProductsAdapter
     lateinit var homeFragment: HomeFragment
+    lateinit var productDetail:ProductDetail
+
+    private val binding get() = _binding!!
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        binding= FragmentProductBinding.inflate(inflater)
-        return binding.root
+        _binding= FragmentProductBinding.inflate(inflater, container,false)
+        val root: View = binding.root
+        return root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -34,7 +41,13 @@ class ProductFragment : Fragment(),ProductsAdapter.OnBrandClickListner {
         brandViewModel.liveDataAllProducts.observe(requireActivity(),{
             productsAdapter= ProductsAdapter(requireContext(),this)
             productsAdapter.addList(it.products)
+
             binding.productRecycler.adapter=productsAdapter
+            binding.toolbar.setNavigationIcon(R.drawable.ic_baseline_arrow_back_24)
+            binding.toolbar.setNavigationOnClickListener{
+                homeFragment = HomeFragment()
+                activity?.supportFragmentManager?.beginTransaction()?.replace(R.id.fragment_container, homeFragment)?.commit()
+            }
         })
     }
 
@@ -45,8 +58,19 @@ class ProductFragment : Fragment(),ProductsAdapter.OnBrandClickListner {
         activity?.supportFragmentManager?.beginTransaction()?.replace(R.id.fragment_container, homeFragment)?.commit()
 
     }
+    override fun onDestroyView() {
+        super.onDestroyView()
+        _binding = null
+    }
 
 
+
+    override fun onProductClick(mylist: Product, position: Int) {
+        brandViewModel.getProductsDetail(mylist.id)
+        productDetail = ProductDetail()
+
+        activity?.supportFragmentManager?.beginTransaction()?.add(R.id.fragment_container, productDetail)?.commit()
+    }
 
 
 }

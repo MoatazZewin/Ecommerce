@@ -2,10 +2,10 @@ package com.example.ecommerce
 
 import android.app.Activity
 import android.os.Bundle
+import android.view.*
+import android.widget.ImageView
+import android.widget.SearchView
 import androidx.fragment.app.Fragment
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
 import androidx.lifecycle.ViewModelProvider
 import com.example.ecommerce.databinding.CategaryItemBinding
 import com.example.ecommerce.databinding.FragmentHomeBinding
@@ -46,6 +46,12 @@ class HomeFragment : Fragment(),AdapterBrand.OnBrandClickListner {
 
 
         })
+
+    }
+
+    override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
+        super.onCreateOptionsMenu(menu, inflater)
+
 
     }
 

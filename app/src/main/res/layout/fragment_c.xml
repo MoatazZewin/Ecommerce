@@ -1,233 +1,99 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".CategoryFragment">
-
-    <androidx.constraintlayout.widget.ConstraintLayout
+    android:fitsSystemWindows="true"
+    tools:context="com.example.ui.fragment.category.CategoryFragment"
+    android:background="@color/white">
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/appBar"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        >
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/networkCatView"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="?actionBarSize"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/viewpager2">
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:visibility="gone">
+            android:layout_height="wrap_content"
+            android:background="@color/black"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
 
             <ImageView
-                android:id="@+id/imageView"
-                android:layout_width="150dp"
-                android:layout_height="150dp"
-                android:layout_marginTop="204dp"
-                android:src="@drawable/internet_conn"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.539"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
-
-            <TextView
-                android:id="@+id/textView2"
+                android:id="@+id/left_icon_login"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="12dp"
-                android:text="OOPS!"
-                android:textColor="@color/black"
-                android:textSize="25dp"
-                android:textStyle="bold"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/imageView" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
-                android:text="Please connect to a network"
-                android:textColor="@color/black"
-                android:textSize="20dp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/textView2"
-                app:layout_constraintVertical_bias="0.0" />
-
-        </androidx.constraintlayout.widget.ConstraintLayout>
-
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/category_constraintlayout"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
-
-            <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/mainCategoriesRecView"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="@id/subcategoriesRecView"
-                app:layout_constraintTop_toTopOf="parent"
-                tools:listitem="@layout/subcategory_title" />
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="1dp"
                 android:background="@color/black"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.0"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/mainCategoriesRecView" />
+                android:src="@drawable/ic_baseline_search_24"></ImageView>
 
-            <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/subcategoriesRecView"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/mainCategoriesRecView"
-                tools:listitem="@layout/subcategory_title" />
-
-
-            <LinearLayout
-                android:layout_width="191dp"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/mainCategoriesRecView"
-                app:layout_constraintStart_toEndOf="@id/subcategoriesRecView">
-
-                <com.facebook.shimmer.ShimmerFrameLayout
-                    android:id="@+id/shimmerFrameLayout1"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_gravity="center">
-
-                    <LinearLayout
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center_horizontal"
-                        android:orientation="horizontal">
-
-                        <include layout="@layout/shimmer_layout" />
-
-                        <include layout="@layout/shimmer_layout" />
-
-                    </LinearLayout>
-                </com.facebook.shimmer.ShimmerFrameLayout>
-                <com.facebook.shimmer.ShimmerFrameLayout
-                    android:id="@+id/shimmerFrameLayout2"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_gravity="center">
-
-                    <LinearLayout
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center_horizontal"
-                        android:orientation="horizontal">
-
-                        <include layout="@layout/shimmer_layout" />
-
-                        <include layout="@layout/shimmer_layout" />
-
-                    </LinearLayout>
-                </com.facebook.shimmer.ShimmerFrameLayout>
-                <com.facebook.shimmer.ShimmerFrameLayout
-                    android:id="@+id/shimmerFrameLayout3"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_gravity="center">
-
-                    <LinearLayout
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center_horizontal"
-                        android:orientation="horizontal">
-
-                        <include layout="@layout/shimmer_layout" />
-
-                        <include layout="@layout/shimmer_layout" />
-
-                    </LinearLayout>
-                </com.facebook.shimmer.ShimmerFrameLayout>
-                <com.facebook.shimmer.ShimmerFrameLayout
-                    android:id="@+id/shimmerFrameLayout4"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_gravity="center">
-
-                    <LinearLayout
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center_horizontal"
-                        android:orientation="horizontal">
-
-                        <include layout="@layout/shimmer_layout" />
-
-                        <include layout="@layout/shimmer_layout" />
-
-                    </LinearLayout>
-                </com.facebook.shimmer.ShimmerFrameLayout>
-
-
-            </LinearLayout>
-
-            <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/itemsRecView"
-                android:layout_width="0dp"
-                android:layout_height="0dp"
-                android:orientation="vertical"
-                android:padding="15dp"
-                android:visibility="gone"
-                app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toEndOf="@id/subcategoriesRecView"
-                app:layout_constraintTop_toBottomOf="@id/mainCategoriesRecView"
-                app:spanCount="2"
-                tools:itemCount="30"
-                tools:listitem="@layout/category_item" />
-
-            <androidx.constraintlayout.widget.Group
-                android:id="@+id/placeHolder"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:visibility="gone"
-                app:constraint_referenced_ids="empty_text,empty_img" />
-            <ImageView
-                android:id="@+id/empty_img"
-                android:layout_width="50dp"
-                android:layout_height="60dp"
-                android:background="@drawable/ic_empty_page"
-                android:visibility="visible"
-                app:layout_constraintHorizontal_bias="0.5"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toEndOf="@id/subcategoriesRecView"
-                app:layout_constraintTop_toBottomOf="@id/mainCategoriesRecView"
-                />
             <TextView
-                android:id="@+id/empty_text"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="5dp"
-                android:layout_marginTop="10dp"
-                android:textColor="@color/dark_gray"
-                app:layout_constraintVertical_bias="0.0"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintStart_toEndOf="@id/subcategoriesRecView"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/empty_img"
-                android:text="empty here" />
+                android:layout_marginStart="110dp"
+                android:background="@color/black"
+                android:text="Category"
+                android:textColor="@color/white"
+                android:textSize="25sp"></TextView>
 
-        </androidx.constraintlayout.widget.ConstraintLayout>
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="80dp"
+                android:src="@drawable/ic_baseline_shopping_cart_24"></ImageView>
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="15dp"
+                android:src="@drawable/ic_baseline_favorite_24"></ImageView>
+        </androidx.appcompat.widget.Toolbar>
 
+        <com.ogaclejapan.smarttablayout.SmartTabLayout
+            android:id="@+id/smartTabs"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:background="@color/white"
+            app:stl_clickable="true"
+            app:stl_defaultTabBackground="?attr/selectableItemBackground"
+            app:stl_defaultTabTextAllCaps="true"
+            app:stl_defaultTabTextColor="@color/black"
+            app:stl_defaultTabTextHorizontalPadding="15dp"
+            app:stl_defaultTabTextSize="13dp"
+            app:stl_distributeEvenly="true"
+            app:stl_drawDecorationAfterTab="true"
+            app:stl_indicatorAlwaysInCenter="false"
+            app:stl_indicatorColor="@color/white"
+            app:stl_indicatorCornerRadius="0dp"
+            app:stl_indicatorGravity="bottom"
+            app:stl_indicatorInFront="false"
+            app:stl_indicatorInterpolation="smart"
+            app:stl_indicatorThickness="3dp"
+            app:stl_indicatorWidth="auto"
+            app:stl_indicatorWithoutPadding="false"
+            app:stl_overlineThickness="0dp"
+            app:stl_titleOffset="18dp"
+            app:stl_underlineThickness="0dp"
+            tools:ignore="SpeakableTextPresentCheck">
+        </com.ogaclejapan.smarttablayout.SmartTabLayout>
+    </com.google.android.material.appbar.AppBarLayout>
 
+    <androidx.viewpager.widget.ViewPager
+        android:id="@+id/viewpager2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/appBar"
+        android:layout_alignParentStart="true"
+        tools:ignore="SpeakableTextPresentCheck">
+    </androidx.viewpager.widget.ViewPager>
 
-
-</FrameLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

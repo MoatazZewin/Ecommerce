@@ -6,7 +6,11 @@ plugins {
 
 android {
     compileSdk 32
+    buildFeatures {
+        viewBinding true
+        dataBinding = true
 
+    }
     defaultConfig {
         applicationId "com.example.ecommerce"
         minSdk 21
@@ -16,10 +20,7 @@ android {
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
-    buildFeatures {
-        viewBinding true
 
-    }
 
     buildTypes {
         release {
@@ -49,10 +50,13 @@ dependencies {
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
     // Room
     implementation "androidx.room:room-runtime:2.2.5"
+    annotationProcessor("androidx.room:room-compiler:2.2.5")
     kapt "androidx.room:room-compiler:2.2.5"
 
     // Kotlin Extensions and Coroutines support for Room
     implementation "androidx.room:room-ktx:2.2.5"
+
+
 
     // Coroutines
     implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-core:1.6.0'
@@ -61,7 +65,9 @@ dependencies {
     // Coroutine Lifecycle Scopes
     implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:2.4.1"
     implementation "androidx.lifecycle:lifecycle-runtime-ktx:2.4.1"
-
+//smart tab
+    implementation 'com.ogaclejapan.smarttablayout:library:2.0.0@aar'
+    implementation 'com.ogaclejapan.smarttablayout:utils-v4:2.0.0@aar'
 
     // Retrofit
     implementation 'com.squareup.retrofit2:retrofit:2.6.0'
@@ -81,4 +87,7 @@ dependencies {
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.6.0-native-mt")
     implementation "androidx.navigation:navigation-fragment-ktx:2.4.1"
     implementation "androidx.navigation:navigation-dynamic-features-fragment:2.4.1"
+
+    // Rounded image view
+    implementation 'com.makeramen:roundedimageview:2.3.0'
 }

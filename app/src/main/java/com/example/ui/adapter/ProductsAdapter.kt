@@ -8,12 +8,12 @@ import com.bumptech.glide.Glide
 import com.example.ecommerce.databinding.CategaryItemBinding
 import com.example.model.dataClass.product.Product
 
-class ProductsAdapter (val context: Context, val onBrandClickListener:OnBrandClickListner) :
+class ProductsAdapter (val context: Context, val onProductClickListner:OnProductClickListner) :
     RecyclerView.Adapter<ProductsAdapter.AdapterProductViewHolder>(){
-    private val brandsList: ArrayList<Product> = ArrayList()
+    private val ProductList: ArrayList<Product> = ArrayList()
     fun addList(myList:List<Product>){
-        this.brandsList.clear()
-        brandsList.addAll(myList)
+        this.ProductList.clear()
+        ProductList.addAll(myList)
     }
 
     inner class AdapterProductViewHolder(binding: CategaryItemBinding): RecyclerView.ViewHolder(binding.root) {
@@ -31,15 +31,22 @@ class ProductsAdapter (val context: Context, val onBrandClickListener:OnBrandCli
     )
 
     override fun onBindViewHolder(holder: ProductsAdapter.AdapterProductViewHolder, position: Int) {
-        holder.tvDesc.text=brandsList[position].title.toString()
+        holder.tvDesc.text=ProductList[position].title.toString()
         Glide.with(context).apply {
-            load(brandsList[position].image?.src).into(holder.imageProduct)
+            load(ProductList[position].image?.src).into(holder.imageProduct)
+        }
+
+        holder.itemView.setOnClickListener {
+            onProductClickListner.onProductClick(ProductList[position],position)
+
         }
 
     }
 
-    override fun getItemCount(): Int =brandsList.size
-    interface OnBrandClickListner{
+    override fun getItemCount(): Int =ProductList.size
+    interface OnProductClickListner{
+        fun onProductClick(mylist:Product,position: Int)
+
 
     }
 }
