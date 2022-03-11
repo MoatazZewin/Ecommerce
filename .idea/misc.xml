@@ -35,6 +35,43 @@
         <entry key="..\:/Users/20111/AndroidStudioProjects/Ecommerce/app/src/main/res/layout/subcategory_title.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/20111/AndroidStudioProjects/Ecommerce/app/src/main/res/layout/tool.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/20111/AndroidStudioProjects/Ecommerce/app/src/main/res/menu/bottom_nav_menu.xml" value="0.1875" />
+        <entry key="..\:/git/Ecommerce/app/src/main/res/drawable-v24/ic_log_in.xml" value="0.1" />
+        <entry key="..\:/git/Ecommerce/app/src/main/res/drawable-v24/ic_shopping_bag.xml" value="0.1" />
+        <entry key="..\:/git/Ecommerce/app/src/main/res/layout/activity_checkout_.xml" value="0.18" />
+        <entry key="..\:/git/Ecommerce/app/src/main/res/layout/activity_login.xml" value="0.2" />
+        <entry key="..\:/git/Ecommerce/app/src/main/res/layout/activity_main.xml" value="0.1" />
+        <entry key="..\:/git/Ecommerce/app/src/main/res/layout/activity_pay_tabs.xml" value="0.2" />
+        <entry key="..\:/git/Ecommerce/app/src/main/res/layout/activity_stripe.xml" value="0.2" />
+        <entry key="..\:/git/Ecommerce/app/src/main/res/layout/cart_toolbar_view.xml" value="0.1" />
+        <entry key="..\:/git/Ecommerce/app/src/main/res/layout/faq_item.xml" value="0.2" />
+        <entry key="..\:/git/Ecommerce/app/src/main/res/layout/fragment_about.xml" value="0.5" />
+        <entry key="..\:/git/Ecommerce/app/src/main/res/layout/fragment_add_address.xml" value="0.2" />
+        <entry key="..\:/git/Ecommerce/app/src/main/res/layout/fragment_address.xml" value="0.2" />
+        <entry key="..\:/git/Ecommerce/app/src/main/res/layout/fragment_all_wish_list.xml" value="0.2" />
+        <entry key="..\:/git/Ecommerce/app/src/main/res/layout/fragment_c.xml" value="0.184375" />
+        <entry key="..\:/git/Ecommerce/app/src/main/res/layout/fragment_cart.xml" value="0.2" />
+        <entry key="..\:/git/Ecommerce/app/src/main/res/layout/fragment_display_order.xml" value="0.2" />
+        <entry key="..\:/git/Ecommerce/app/src/main/res/layout/fragment_f_a_q.xml" value="0.2" />
+        <entry key="..\:/git/Ecommerce/app/src/main/res/layout/fragment_login.xml" value="0.22" />
+        <entry key="..\:/git/Ecommerce/app/src/main/res/layout/fragment_order_confirmation.xml" value="0.2" />
+        <entry key="..\:/git/Ecommerce/app/src/main/res/layout/fragment_profile.xml" value="0.2" />
+        <entry key="..\:/git/Ecommerce/app/src/main/res/layout/fragment_settings.xml" value="0.2" />
+        <entry key="..\:/git/Ecommerce/app/src/main/res/layout/fragment_shop_search.xml" value="0.2" />
+        <entry key="..\:/git/Ecommerce/app/src/main/res/layout/fragment_shop_tab.xml" value="0.2" />
+        <entry key="..\:/git/Ecommerce/app/src/main/res/layout/fragment_show_one_order.xml" value="0.2" />
+        <entry key="..\:/git/Ecommerce/app/src/main/res/layout/ic_log_in.xml" value="0.2" />
+        <entry key="..\:/git/Ecommerce/app/src/main/res/layout/image_slider_item.xml" value="0.2" />
+        <entry key="..\:/git/Ecommerce/app/src/main/res/layout/item_address.xml" value="0.2" />
+        <entry key="..\:/git/Ecommerce/app/src/main/res/layout/item_cart.xml" value="0.2" />
+        <entry key="..\:/git/Ecommerce/app/src/main/res/layout/item_order_confirmation.xml" value="0.2" />
+        <entry key="..\:/git/Ecommerce/app/src/main/res/layout/item_order_display.xml" value="0.1" />
+        <entry key="..\:/git/Ecommerce/app/src/main/res/layout/layout_screen.xml" value="0.2" />
+        <entry key="..\:/git/Ecommerce/app/src/main/res/layout/list_toolbar_view.xml" value="0.2" />
+        <entry key="..\:/git/Ecommerce/app/src/main/res/layout/one_order_items_details.xml" value="0.4821763602251407" />
+        <entry key="..\:/git/Ecommerce/app/src/main/res/layout/options_item.xml" value="0.2" />
+        <entry key="..\:/git/Ecommerce/app/src/main/res/layout/order_image_item.xml" value="0.2" />
+        <entry key="..\:/git/Ecommerce/app/src/main/res/layout/shop_item.xml" value="0.2" />
+        <entry key="..\:/git/Ecommerce/app/src/main/res/layout/wish_list_item.xml" value="0.2" />
       </map>
     </option>
   </component>
