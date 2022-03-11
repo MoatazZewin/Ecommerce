@@ -3,13 +3,14 @@ package com.example.ecommerce
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.fragment.app.Fragment
+import com.example.ui.fragment.category.CategoryFragment
 import com.google.android.material.bottomnavigation.BottomNavigationView
 
 class MainActivity : AppCompatActivity() {
     lateinit var bottomNagationView:BottomNavigationView
     lateinit var homeFragment :HomeFragment
     lateinit var meFragment :MeFragment
-    lateinit var categoryFragment :CategoryFragment
+    lateinit var categoryFragment : CategoryFragment
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)

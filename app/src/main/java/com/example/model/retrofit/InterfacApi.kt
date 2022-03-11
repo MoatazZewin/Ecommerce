@@ -5,6 +5,7 @@ import com.example.model.dataClass.brand.Brands
 import com.example.model.dataClass.brand.SmartCollections
 import com.example.model.dataClass.customcollection.ResCustomCollection
 import com.example.model.dataClass.product.ResProducts
+import com.example.model.dataClass.productdetail.ProductDetails
 import retrofit2.Response
 import retrofit2.http.GET
 import retrofit2.http.Path
@@ -22,6 +23,9 @@ interface InterfacApi {
 
     @GET("collections/{collection_id}/products.json")
     suspend fun getCollectionProducts(  @Path("collection_id") collection_id:Long):Response<ResProducts>
+
+    @GET("products/{product_id}.json")
+    suspend fun getProductDetails(@Path("product_id") product_id:Long): Response<ProductDetails>
 
 
     @GET("smart_collections.json")

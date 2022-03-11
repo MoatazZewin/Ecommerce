@@ -1,9 +1,9 @@
-package com.example.example
+package com.example.model.dataClass.productdetail
 
 import com.google.gson.annotations.SerializedName
 
 
-data class Images (
+data class Image (
 
   @SerializedName("id"                   ) var id                : Long?              = null,
   @SerializedName("product_id"           ) var productId         : Long?              = null,
