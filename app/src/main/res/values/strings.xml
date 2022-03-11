@@ -2,13 +2,193 @@
     <string name="app_name">Ecommerce</string>
     <string name="login">Login to your account</string>
     <string name="email">Email</string>
-    <string name="password">Password</string>
     <string name="forgotpassword">FORGOT PASSWORD?</string>
     <string name="login_btn">LOGIN</string>
     <string name="newOnEcommerce">New on Ecommerce?</string>
     <string name="creatAnAccount">CREATE AN ANCCOUNT</string>
     <string name="create_acount">Create Account</string>
     <string name="title_activity_main2">MainActivity2</string>
+    <string name="setting">Setting</string>
+    <string name="shopping_bag">Shopping Bag</string>
+    <string name="hi">Hi,  </string>
+    <string name="name_of_profile">Name Of Profile</string>
+    <string name="_1">1</string>
+    <string name="coupons">coupons</string>
+    <string name="points">Points</string>
+    <string name="wallet">Wallet</string>
+    <string name="gift_card">Gift Card</string>
+    <string name="my_orders">My Orders</string>
+    <string name="unpaid">Unpaid Orders</string>
+    <string name="processing">Processing</string>
+    <string name="shipping">Shipping</string>
+    <string name="returns">Returns</string>
+    <string name="wish_list">Wishlist</string>
+    <string name="image_slider">image slider</string>
+    <string name="_1_5">1/5</string>
+    <string name="add_to_wish_list">Add to wishlist</string>
+    <string name="home">Home</string>
+    <string name="description">Description:</string>
+    <string name="status">Status:</string>
+    <string name="vendor">Vendor:</string>
+    <string name="_70_00">70.00</string>
+    <string name="color">Color</string>
+    <string name="size">Size</string>
+    <string name="add_to_cart">Add To Cart</string>
+    <string name="ok">OK</string>
+    <string name="you_are_not_signed">You Are Not Signed</string>
+    <string name="sign_in_and_try_again">If You Wont To Add To Cart Please Signing And try Again</string>
+    <string name="signin">SignIn</string>
+    <string name="item_saved_in_cart">Item Saved in Cart</string>
+    <string name="see_all">See All</string>
+    <string name="log_out">Log out</string>
+    ////////////////fayza/////////////
+
+    <string name="cart_id">Cart Id</string>
+    <string name="product_name">Product name</string>
+    <string name="show_merchant_logo">Show Merchant Logo</string>
+    <string name="complete_billing_info">Show Billing Info</string>
+    <string name="force_shipping_validation">Force Shipping Validation</string>
+    <string name="select_tokenise_type">Select Tokenise Type</string>
+    <string name="tokenisation_type">tokenization type</string>
+    <string name="client_secret">Client secret</string>
+
+    <string name="payment_method">Payment Method</string>
+    <string name="login_unsuccessful_msg">Login unsuccessful</string>
+    <string name="fact_type_android">Android</string>
+    <string name="fact_type_california">California</string>
+    <string name="preference_fact_type_key">fact_type_pref</string>
+    <string name="welcome_message_authed">Hi %1$s! Did you know that %2$s.</string>
+    <string name="facebook_app_id">286383829856335</string>
+    <string name="facebook_application_id" translatable="false">286383829856335</string>
+    <string name="fb_login_protocol_scheme" translatable="false">fb286383829856335</string>
+    <string name="sign_in_Underlined"><u>SIGN IN</u></string>
+    <string name="register_Underlined"><u>REGISTER</u></string>
+    <string name="sign_in">SIGN IN</string>
+    <string name="register">REGISTER</string>
+    <string name="or_join_with">__ Or join with __</string>
+    <string name="password">PASSWORD</string>
+    <string name="email_address">EMAIL ADDRESS</string>
+    <string name="App_name">SHOPY</string>
+    <string name="full_name">*FULL NAME</string>
+    <string name="category">Category</string>
+    <string name="shop">Shop</string>
+    <string name="checkout">CHECKOUT</string>
+    <string name="save">save</string>
+    <string name="phone_number">*Phone Number</string>
+    <string name="city">*City</string>
+    <string name="address_line_2">Address Line 2</string>
+    <string name="post_zip_code">*Post/Zip Code</string>
+    <string name="address_line_1">*Address Line 1</string>
+    <string name="state_province_optional">*State/province</string>
+    <string name="country">*Country</string>
+    <!-- Preference Titles -->
+    <string name="messages_header">Messages</string>
+    <string name="sync_header">Sync</string>
+
+    <!-- Messages Preferences -->
+    <string name="signature_title">Your signature</string>
+    <string name="reply_title">Default reply action</string>
+
+    <!-- Sync Preferences -->
+    <string name="sync_title">Sync email periodically</string>
+    <string name="attachment_title">Download incoming attachments</string>
+    <string name="attachment_summary_on">Automatically download attachments for incoming emails
+    </string>
+    <string name="attachment_summary_off">Only download attachments when manually requested</string>
+    <string name="make_default">Make Default</string>
+    <string name="at_least_one_letter">At least one letter</string>
+    <string name="at_least_one_number">At least one number</string>
+    <string name="_8_characters_minimum">8 characters minimum</string>
+    <string name="add_address">Add Address</string>
+    <string name="my_addresses">My Addresses</string>
+    <string name="register_login"><u>sign in/register</u></string>
+    <string name="imagebutton">ImageButton</string>
+    <string name="delete">Delete</string>
+    <string name="Delete_Item_From_Wish_List">Delete Item From WishList</string>
+    <string name="are_you_sure">Are You Sure?</string>
+    <string name="me">Me</string>
+    <string name="place_order">Place Order</string>
+    <string name="apply_voucher">Apply Discount</string>
+    <string name="enter_discount_code">Enter Discount Code</string>
+    <string name="discount">Discount:</string>
+    <string name="alert_msg"><b>Are you sure to delete this item?</b></string>
+    <string name="item_total">Sub Total:</string>
+    <string name="click_to_add_address">Click to add address</string>
+    <string name="log_in_to_see_shopping_cart">Log in to see shopping cart</string>
+    <string name="your_bag_is_empty">Your bag is empty</string>
+    <string name="change_password">Change Password</string>
+    <string name="current_password">Current Password</string>
+    <string name="new_password">New Password</string>
+    <string name="confirm_password">Confirm Password</string>
+
+    <string name="paid">Paid</string>
+    <string name="order">Order ID  #</string>
+    <string name="_111111111111111111111">111111111111111111111</string>
+    <string name="money">Money</string>
+    <string name="total_price">Total price  </string>
+    <string name="_170">170</string>
+    <string name="egp">EGP</string>
+    <string name="created_at">created at: </string>
+    <string name="_2021_05_31t23_47_47_02_00">2021-05-31T23:47:47+02:00</string>
+    <string name="cancel">Cancel</string>
+    <string name="pay_now">Pay Now</string>
+    <string name="image">Image</string>
+    <string name="all_orders">All Orders</string>
+    <string name="paid_orders">Paid Orders</string>
+    <string name="order_canceld">order canceled</string>
+    <string name="some_error_accurated">Some error accurate</string>
+    <string name="cancel_order">Cancel Order</string>
+    <string name="please_log_in">Login to view your wishlist</string>
+    <string name="add_to_bag">ADD TO BAG</string>
+    <string name="logInToCanAddToWishList">Login to can add to wishlist</string>
+    <string name="logInToCanAddToCart">Login to can add to cart</string>
+    <string name="thereIsNoNetwork">There is no network</string>
+    <string name="AllWishList">All WishList</string>
+    <string name="cash">Cash</string>
+    <string name="edit_profile">Edit Profile</string>
+    <string name="address_book">Address Book</string>
+    <string name="about_shopy">About SHOPY</string>
+    <string name="it_s_an_e_commerce_app_based_exclusive_in_egypt_where_you_can_find_categories_and_sub_categories_for_all_clothes_shoes_and_accessories">It\'s an e-commerce app based exclusive in Egypt where you can find categories and sub-categories for all clothes, shoes and accessories</string>
+    <string name="developed_by">Developed By</string>
+    <string name="empty">Empty</string>
+    <string name="waiting_for_payment">waiting for payment</string>
+    <string name="payment_type">Payment Method:</string>
+    <string name="order_product_1_item">Order Product (1 item)</string>
+    <string name="title">title</string>
+    <string name="variant">Variant</string>
+    <string name="quantity">Quantity  x</string>
+    <string name="_5_black">5 / black</string>
+    <string name="quantity_x">quantity X</string>
+    <string name="price">Price</string>
+    <string name="see_details">See Details</string>
+    <string name="total">Total:</string>
+    <string name="it_is_empty_here">It is empty here :(</string>
+    <string name="change_address"><u>Change address</u></string>
+
+
+    <string-array name="sortArr">
+        <item>SORT</item>
+        <item>price: Low to High</item>
+        <item>price: High to Low</item>
+        <item>Alphabetically</item>
+        <item>none</item>
+    </string-array>
+    <string-array name="filterArr">
+        <item>FILTER</item>
+        <item>shoes</item>
+        <item>t-shirts</item>
+        <item>accessories</item>
+        <item>none</item>
+    </string-array>
+    <string name="about_us">About Us</string>
+    <string name="about_us_tv">Shopy is a B2C mobile application. The application mainly focuses on women\'s wear, but it also offers men\'s apparel, children\'s clothes, accessories, shoes, bags and other fashion items. Shopy mainly targets Egypt. The brand was founded in May 2021, and since then it has upheld the philosophy that "everyone can enjoy the beauty of fashion."</string>
+    <string name="our_mission">Our Mission</string>
+    <string name="our_mission_tv">Shopy prides itself on offering on-trend styles catering to both young women and teens, that won’t break the bank. Shopy adheres to the concept that "everyone can enjoy the beauty of fashion." Shopy is able to stay on top of the latest fashion trends from around the globe while rapidly bringing these styles to market. So whether you\'re searching for boho dresses and graphic tees or patterned blouses and chic swimwear, Shopy is the ultimate one-stop-shop for the modern yet economical fashionista. It aims to promptly offer stylish quality products at appealing prices to every user in the world.</string>
+    <string name="faq">FAQ</string>
+    <string name="edit_address">Edit Address</string>
+    <string name="no_results_found">No results found</string>
+    <string name="address">address</string>
+    <string name="no_internet_connection">No Internet Connection</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
