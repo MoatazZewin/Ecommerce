@@ -2,6 +2,8 @@ plugins {
     id 'com.android.application'
     id 'kotlin-android'
     id 'kotlin-kapt'
+
+
 }
 
 android {
@@ -35,6 +37,10 @@ android {
     }
     kotlinOptions {
         jvmTarget = '1.8'
+    }
+    buildFeatures {
+        viewBinding true
+        dataBinding=true
     }
 }
 
@@ -90,4 +96,50 @@ dependencies {
 
     // Rounded image view
     implementation 'com.makeramen:roundedimageview:2.3.0'
+    ////////////////////////////////////////////////////////
+    //View Pager
+    implementation "androidx.viewpager2:viewpager2:1.0.0"
+    // Rounded image view
+    implementation 'com.makeramen:roundedimageview:2.3.0'
+    //smart tab
+    implementation 'com.ogaclejapan.smarttablayout:library:2.0.0@aar'
+    implementation 'com.ogaclejapan.smarttablayout:utils-v4:2.0.0@aar'
+    // navigation component
+    def nav_version = "2.4.1"
+    implementation("androidx.navigation:navigation-fragment-ktx:$nav_version")
+    implementation("androidx.navigation:navigation-ui-ktx:$nav_version")
+
+    // retrofit
+    implementation 'com.squareup.retrofit2:retrofit:2.9.0'
+    //design
+    implementation 'jp.wasabeef:recyclerview-animators:4.0.2'
+    implementation 'com.facebook.shimmer:shimmer:0.5.0'
+
+    //coroutines
+
+    implementation 'com.jakewharton.retrofit:retrofit2-kotlin-coroutines-adapter:0.9.2'
+    implementation 'com.squareup.okhttp3:logging-interceptor:3.12.0'
+
+    // circle image view
+    implementation 'de.hdodenhof:circleimageview:3.1.0'
+    implementation 'com.github.bumptech.glide:glide:4.13.0'
+    implementation 'com.github.takusemba:multisnaprecyclerview:2.0.0'
+
+    // navigation component
+    implementation "androidx.navigation:navigation-fragment-ktx:2.3.5"
+    implementation "androidx.navigation:navigation-ui-ktx:2.3.5"
+    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
+    implementation 'com.squareup.picasso:picasso:2.71828'
+
+    // Room
+    implementation "androidx.room:room-runtime:2.4.1"
+    kapt "androidx.room:room-compiler:2.4.1"
+
+    // Kotlin Extensions and Coroutines support for Room
+    implementation "androidx.room:room-ktx:2.4.1"
+
+
+    //google pay
+    implementation 'com.google.android.gms:play-services-wallet:19.1.0'
+    ////////////////////////////////////////////////////////////
 }

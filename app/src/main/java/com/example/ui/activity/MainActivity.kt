@@ -7,12 +7,13 @@ import androidx.fragment.app.Fragment
 import com.example.model.dataClass.productdetail.Product
 import com.example.ui.fragment.category.CategoryFragment
 import com.example.ui.fragment.home.AddtoCard
+import com.example.ui.fragment.profile.MeFragment
 import com.google.android.material.bottomnavigation.BottomNavigationView
 
 class MainActivity : AppCompatActivity(), AddtoCard {
     lateinit var bottomNagationView:BottomNavigationView
     lateinit var homeFragment :HomeFragment
-    lateinit var meFragment :MeFragment
+    lateinit var meFragment : MeFragment
     lateinit var categoryFragment : CategoryFragment
     var products: ArrayList<Product> = ArrayList<Product>()
 
