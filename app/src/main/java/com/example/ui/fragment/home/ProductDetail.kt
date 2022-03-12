@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.lifecycle.ViewModelProvider
+import com.example.ecommerce.MainActivity
 import com.example.ecommerce.databinding.FragmentProductDetailBinding
 import com.example.ui.adapter.PagerAdapter
 import com.example.ui.viewmodel.BrandViewModel
@@ -16,6 +17,7 @@ class ProductDetail : Fragment() {
     private lateinit var binding:FragmentProductDetailBinding
     private lateinit var brandViewModel: BrandViewModel
     private lateinit var pagerAdapter: PagerAdapter
+    private lateinit var addToCard:AddtoCard
 
 
     override fun onCreateView(
@@ -36,8 +38,10 @@ class ProductDetail : Fragment() {
             binding.progressPar.visibility=View.GONE
             binding.prise.text=it.product!!.variants[0].price
 //            binding.viewPagerMain.adapter=pagerAdapter
-
-
+            var product=it.product
+            binding.addToCart.setOnClickListener {
+                product?.let { it1 -> (requireActivity() as MainActivity).addtoCard(it1) }
+            }
 
         })
         return binding.root
