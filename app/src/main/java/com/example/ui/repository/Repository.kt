@@ -16,7 +16,7 @@ class Repository(private val api:InterfacApi, private val application:Applicatio
     suspend fun getProductsDetail(productId:Long)=api.getProductDetails(productId)
 
     fun insert(favoriteProduct: FavoriteProduct)= database?.insert(favoriteProduct)
-    fun getAllFav()=database?.getAllFav()
+    fun getAllFav():LiveData<List<FavoriteProduct>> = database?.getAllFav()!!
     fun delete(favoriteProduct: FavoriteProduct) =database?.delete(favoriteProduct)
     fun getOneItem(id:Long)= database?.getOneItem(id)
 

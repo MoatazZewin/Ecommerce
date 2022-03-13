@@ -37,16 +37,20 @@
               android:textSize="30sp"></TextView>
 
           <ImageView
+              android:id="@+id/toCart"
               android:layout_width="wrap_content"
               android:layout_height="wrap_content"
-              android:layout_marginStart="80dp"
-              android:src="@drawable/ic_baseline_shopping_cart_24"></ImageView>
+              android:src="@drawable/ic_baseline_shopping_cart_24"
+              tools:layout_editor_absoluteX="295dp"
+              tools:layout_editor_absoluteY="16dp"></ImageView>
 
           <ImageView
+              android:id="@+id/toFav"
               android:layout_width="wrap_content"
               android:layout_height="wrap_content"
-              android:layout_marginStart="15dp"
-              android:src="@drawable/ic_baseline_favorite_24"></ImageView>
+              android:src="@drawable/ic_baseline_favorite_24"
+              tools:layout_editor_absoluteX="334dp"
+              tools:layout_editor_absoluteY="16dp"></ImageView>
       </androidx.appcompat.widget.Toolbar>
 
       <androidx.recyclerview.widget.RecyclerView

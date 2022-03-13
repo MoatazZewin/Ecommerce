@@ -8,7 +8,9 @@ import android.view.ViewGroup
 import androidx.lifecycle.ViewModelProvider
 import com.example.ecommerce.MainActivity
 import com.example.ecommerce.databinding.FragmentProductDetailBinding
+import com.example.model.local.favoriteRoom.FavoriteProduct
 import com.example.ui.adapter.PagerAdapter
+import com.example.ui.fragment.favorite.FavoriteAdapter
 import com.example.ui.viewmodel.BrandViewModel
 
 
@@ -18,6 +20,7 @@ class ProductDetail : Fragment() {
     private lateinit var brandViewModel: BrandViewModel
     private lateinit var pagerAdapter: PagerAdapter
     private lateinit var addToCard:AddtoCard
+    private lateinit var favorite:FavoriteProduct
 
 
     override fun onCreateView(
@@ -43,8 +46,27 @@ class ProductDetail : Fragment() {
                 product?.let { it1 -> (requireActivity() as MainActivity).addtoCard(it1) }
             }
 
+            favorite= FavoriteProduct(
+                product?.id!!,
+                product.image?.src!!,
+                product?.title!!,
+                product.variants?.get(0).price!!,
+                product.variants.get(0).inventoryQuantity!!,
+                1
+
+            )
+
         })
         return binding.root
     }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        binding.addToWishList.setOnClickListener {
+            brandViewModel.insert(favorite)
+        }
+
+    }
+
 
 }

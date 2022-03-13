@@ -4,10 +4,13 @@ import android.os.Bundle
 import android.view.*
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.fragment.findNavController
 import com.example.ecommerce.databinding.FragmentHomeBinding
 import com.example.model.dataClass.brand.SmartCollections
 import com.example.ui.adapter.AdapterBrand
 import com.example.ui.fragment.ProductFragment
+import com.example.ui.fragment.favorite.FavoriteFragment
+import com.example.ui.fragment.profile.SignUpFragment
 import com.example.ui.viewmodel.BrandViewModel
 
 class HomeFragment : Fragment(), AdapterBrand.OnBrandClickListner {
@@ -16,6 +19,8 @@ class HomeFragment : Fragment(), AdapterBrand.OnBrandClickListner {
     private lateinit var brandViewModel: BrandViewModel
     private lateinit var adapterBrand: AdapterBrand
     lateinit var proudectFragment: ProductFragment
+    lateinit var favFragment: FavoriteFragment
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -42,6 +47,7 @@ class HomeFragment : Fragment(), AdapterBrand.OnBrandClickListner {
 
 
         })
+        click()
 
     }
 
@@ -59,6 +65,13 @@ class HomeFragment : Fragment(), AdapterBrand.OnBrandClickListner {
             ?.replace(R.id.fragment_container, proudectFragment)?.commit()
 
 
+    }
+    fun click(){
+        binding.toFav.setOnClickListener {
+            favFragment= FavoriteFragment()
+            activity?.supportFragmentManager?.beginTransaction()
+                ?.replace(R.id.fragment_container, favFragment)?.commit()
+        }
     }
 
 

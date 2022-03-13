@@ -5,22 +5,28 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.navigation.fragment.findNavController
+import com.example.ecommerce.R
 import com.example.ecommerce.databinding.FragmentCBinding
+import com.example.ui.fragment.favorite.FavoriteFragment
 import com.ogaclejapan.smarttablayout.utils.v4.FragmentPagerItemAdapter
 import com.ogaclejapan.smarttablayout.utils.v4.FragmentPagerItems
 
 
 class CategoryFragment : Fragment() {
+    lateinit var favFragment: FavoriteFragment
+    lateinit var binding:FragmentCBinding
 
-    private lateinit var _binding: FragmentCBinding
+
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        _binding = FragmentCBinding.inflate(inflater, container, false)
+        binding = FragmentCBinding.inflate(inflater, container, false)
         setUpTabs()
-        return _binding.root
+        click()
+        return binding.root
     }
 
     private fun setUpTabs(){
@@ -33,8 +39,16 @@ class CategoryFragment : Fragment() {
                 .add("OnSale", SaleFragment::class.java)
                 .create()
         )
-        _binding.viewpager2.adapter = adapter
-        _binding.smartTabs.setViewPager(_binding.viewpager2)
+        binding.viewpager2.adapter = adapter
+        binding.smartTabs.setViewPager(binding.viewpager2)
     }
 
-}
+    fun click(){
+        binding.toFav.setOnClickListener {
+            favFragment= FavoriteFragment()
+            activity?.supportFragmentManager?.beginTransaction()
+                ?.replace(R.id.fragment_container, favFragment)?.commit()
+        }
+    }
+    }
+

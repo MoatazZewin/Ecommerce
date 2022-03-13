@@ -1,99 +1,107 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:fitsSystemWindows="true"
-    tools:context="com.example.ui.fragment.category.CategoryFragment"
-    android:background="@color/white">
-    <com.google.android.material.appbar.AppBarLayout
-        android:id="@+id/appBar"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="?actionBarSize"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintBottom_toTopOf="@id/viewpager2">
-        <androidx.appcompat.widget.Toolbar
-            android:id="@+id/toolbar"
+        android:layout_height="match_parent"
+        android:fitsSystemWindows="true"
+        tools:context="com.example.ui.fragment.category.CategoryFragment"
+        android:background="@color/white">
+
+        <com.google.android.material.appbar.AppBarLayout
+            android:id="@+id/appBar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@color/black"
-            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="?actionBarSize"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent">
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toTopOf="@id/viewpager2">
 
-            <ImageView
-                android:id="@+id/left_icon_login"
-                android:layout_width="wrap_content"
+            <androidx.appcompat.widget.Toolbar
+                android:id="@+id/toolbar"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@color/black"
-                android:src="@drawable/ic_baseline_search_24"></ImageView>
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="110dp"
-                android:background="@color/black"
-                android:text="Category"
-                android:textColor="@color/white"
-                android:textSize="25sp"></TextView>
+                <ImageView
+                    android:id="@+id/left_icon_login"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@color/black"
+                    android:src="@drawable/ic_baseline_search_24"></ImageView>
 
-            <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="80dp"
-                android:src="@drawable/ic_baseline_shopping_cart_24"></ImageView>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="110dp"
+                    android:background="@color/black"
+                    android:text="Category"
+                    android:textColor="@color/white"
+                    android:textSize="25sp"></TextView>
 
-            <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="15dp"
-                android:src="@drawable/ic_baseline_favorite_24"></ImageView>
-        </androidx.appcompat.widget.Toolbar>
+                <ImageView
+                    android:id="@+id/toCart"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="80dp"
+                    android:src="@drawable/ic_baseline_shopping_cart_24"></ImageView>
 
-        <com.ogaclejapan.smarttablayout.SmartTabLayout
-            android:id="@+id/smartTabs"
+                <ImageView
+                    android:id="@+id/toFav"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="15dp"
+                    android:src="@drawable/ic_baseline_favorite_24"></ImageView>
+            </androidx.appcompat.widget.Toolbar>
+
+            <com.ogaclejapan.smarttablayout.SmartTabLayout
+                android:id="@+id/smartTabs"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:background="@color/white"
+                app:stl_clickable="true"
+                app:stl_defaultTabBackground="?attr/selectableItemBackground"
+                app:stl_defaultTabTextAllCaps="true"
+                app:stl_defaultTabTextColor="@color/black"
+                app:stl_defaultTabTextHorizontalPadding="15dp"
+                app:stl_defaultTabTextSize="13dp"
+                app:stl_distributeEvenly="true"
+                app:stl_drawDecorationAfterTab="true"
+                app:stl_indicatorAlwaysInCenter="false"
+                app:stl_indicatorColor="@color/white"
+                app:stl_indicatorCornerRadius="0dp"
+                app:stl_indicatorGravity="bottom"
+                app:stl_indicatorInFront="false"
+                app:stl_indicatorInterpolation="smart"
+                app:stl_indicatorThickness="3dp"
+                app:stl_indicatorWidth="auto"
+                app:stl_indicatorWithoutPadding="false"
+                app:stl_overlineThickness="0dp"
+                app:stl_titleOffset="18dp"
+                app:stl_underlineThickness="0dp"
+                tools:ignore="SpeakableTextPresentCheck"></com.ogaclejapan.smarttablayout.SmartTabLayout>
+        </com.google.android.material.appbar.AppBarLayout>
+
+        <androidx.viewpager.widget.ViewPager
+            android:id="@+id/viewpager2"
             android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:background="@color/white"
-            app:stl_clickable="true"
-            app:stl_defaultTabBackground="?attr/selectableItemBackground"
-            app:stl_defaultTabTextAllCaps="true"
-            app:stl_defaultTabTextColor="@color/black"
-            app:stl_defaultTabTextHorizontalPadding="15dp"
-            app:stl_defaultTabTextSize="13dp"
-            app:stl_distributeEvenly="true"
-            app:stl_drawDecorationAfterTab="true"
-            app:stl_indicatorAlwaysInCenter="false"
-            app:stl_indicatorColor="@color/white"
-            app:stl_indicatorCornerRadius="0dp"
-            app:stl_indicatorGravity="bottom"
-            app:stl_indicatorInFront="false"
-            app:stl_indicatorInterpolation="smart"
-            app:stl_indicatorThickness="3dp"
-            app:stl_indicatorWidth="auto"
-            app:stl_indicatorWithoutPadding="false"
-            app:stl_overlineThickness="0dp"
-            app:stl_titleOffset="18dp"
-            app:stl_underlineThickness="0dp"
-            tools:ignore="SpeakableTextPresentCheck">
-        </com.ogaclejapan.smarttablayout.SmartTabLayout>
-    </com.google.android.material.appbar.AppBarLayout>
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/appBar"
+            android:layout_alignParentStart="true"
+            tools:ignore="SpeakableTextPresentCheck"></androidx.viewpager.widget.ViewPager>
 
-    <androidx.viewpager.widget.ViewPager
-        android:id="@+id/viewpager2"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/appBar"
-        android:layout_alignParentStart="true"
-        tools:ignore="SpeakableTextPresentCheck">
-    </androidx.viewpager.widget.ViewPager>
-
-</androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

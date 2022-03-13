@@ -49,6 +49,8 @@ class ProductFragment : Fragment(),ProductsAdapter.OnProductClickListner {
                 activity?.supportFragmentManager?.beginTransaction()?.replace(R.id.fragment_container, homeFragment)?.commit()
             }
         })
+
+
     }
 
     override fun onPause() {
