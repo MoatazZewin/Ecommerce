@@ -4,16 +4,15 @@ import android.app.Application
 import androidx.lifecycle.*
 import com.example.model.dataClass.brand.Brands
 import com.example.model.dataClass.product.ResProducts
-import com.example.model.dataClass.productdetail.Product
 import com.example.model.dataClass.productdetail.ProductDetails
 import com.example.model.retrofit.RetrofitInstance
-import com.example.ui.repository.BrandRepository
+import com.example.ui.repository.Repository
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 
 class BrandViewModel(application:Application):AndroidViewModel(application){
 
-    private val brandRepositry = BrandRepository(RetrofitInstance.api)
+    private val brandRepositry = Repository(RetrofitInstance.api,application)
 
     private val mutableResponse = MutableLiveData<Brands>()
     val liveDataResponse: LiveData<Brands> get() = mutableResponse
