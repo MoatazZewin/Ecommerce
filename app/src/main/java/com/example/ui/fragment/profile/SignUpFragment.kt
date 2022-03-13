@@ -24,10 +24,10 @@ class SignUpFragment : Fragment() {
     private lateinit var userPassword: String
     private lateinit var userConfirmPassword: String
 
-    /*
+
     private val viewModel by lazy {
-        SignupViewModelFragment.create(this)
-    }*/
+        SignUpViewModel.create(this)
+    }
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
@@ -44,13 +44,7 @@ class SignUpFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-
-        /*
- binding.tvSignin.setOnClickListener {
-            findNavController().navigate(R.id.signInFragment)
-        }
-        bindUi()
-        binding.registerBtn.setOnClickListener {
+        binding.buttonCreate.setOnClickListener {
             if (validateForm()) {
 
                 val customer = CustomerModel(
@@ -70,12 +64,12 @@ class SignUpFragment : Fragment() {
                             "Registered ",
                             Toast.LENGTH_LONG
                         ).show()
-                    } else To
-                    ast.makeText(
-                        requireContext(),
-                        "Failed to  Register",
-                        Toast.LENGTH_LONG
-                    ).show()
+                    } else
+                        Toast.makeText(
+                            requireContext(),
+                            "Failed to  Register",
+                            Toast.LENGTH_LONG
+                        ).show()
                 }
             }
         }
@@ -83,40 +77,39 @@ class SignUpFragment : Fragment() {
 
     private fun validateForm(): Boolean {
         firstName = binding.editTextFullName.text.toString()
-        userEmail = binding.emailEdt.text.toString()
-        userPassword = binding.passwordEdt.text.toString()
-        userConfirmPassword = binding.confirmPasswordEdt.text.toString()
-
-        if (firstName.isEmpty()) {
-            binding.nameEdt.requestFocus()
-            binding.nameEdt.error = "User Name is Required"
-            return false
-        }
+        userEmail = binding.editTextEmail.text.toString()
+        userPassword = binding.editTextPassword.text.toString()
+        userConfirmPassword = binding.editTextConfiemPass.text.toString()
 
         if (userEmail.isEmpty()) {
-            binding.emailEdt.requestFocus()
-            binding.emailEdt.error = "Email Address is Required"
+            binding.editTextEmail.requestFocus()
+            binding.editTextEmail.error = "Required"
             return false
         }
 
+
+        if (firstName.isEmpty()) {
+            binding.editTextFullName.requestFocus()
+            binding.editTextFullName.error = "Required"
+            return false
+        }
+
+
         if (userPassword.isEmpty()) {
-            binding.passwordEdt.requestFocus()
-            binding.passwordEdt.error = "Password is Required"
+            binding.editTextPassword.requestFocus()
+            binding.editTextPassword.error = "Required"
             return false
         }
         if (userConfirmPassword.isEmpty()) {
-            binding.confirmPasswordEdt.requestFocus()
-            binding.confirmPasswordEdt.error = "Confirm Password is Required"
+            binding.textConfirmPass.requestFocus()
+            binding.textConfirmPass.error = "Required"
             return false
         }
         if (userPassword != userConfirmPassword) {
-            binding.confirmPasswordEdt.requestFocus()
-            binding.confirmPasswordEdt.error = "Password Does Not Match Confirm Password"
+            binding.textConfirmPass.requestFocus()
+            binding.textConfirmPass.error = "doesn't match the password"
             return false
         }
         return true
-    }
-
-    }*/
     }
 }

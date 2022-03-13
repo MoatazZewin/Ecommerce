@@ -4,11 +4,12 @@ import com.example.example.CategoryResponse
 import com.example.model.dataClass.brand.Brands
 import com.example.model.dataClass.brand.SmartCollections
 import com.example.model.dataClass.customcollection.ResCustomCollection
+import com.example.model.dataClass.customer.CustomerModel
+import com.example.model.dataClass.customer.CustomersModel
 import com.example.model.dataClass.product.ResProducts
 import com.example.model.dataClass.productdetail.ProductDetails
 import retrofit2.Response
-import retrofit2.http.GET
-import retrofit2.http.Path
+import retrofit2.http.*
 
 
 interface InterfacApi {
@@ -51,6 +52,13 @@ interface InterfacApi {
 //    @GET("products/{product_id}.json")
 //    suspend fun getSingleProduct( @Path("product_id") product_id:Long):Response<ProductCollectionResponse>
 
+    //Auth
+    @POST("customers.json")
+    suspend fun register(@Body customer: CustomerModel):
+            Response<CustomerModel>
+
+    @GET("customers.json")
+    suspend fun login(): Response<CustomersModel>
 
 
 }
