@@ -1,5 +1,6 @@
 package com.example.ui.fragment
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -43,11 +44,13 @@ class ProductFragment : Fragment(),ProductsAdapter.OnProductClickListner {
             productsAdapter.addList(it.products)
 
             binding.productRecycler.adapter=productsAdapter
-            binding.toolbar.setNavigationIcon(R.drawable.ic_baseline_arrow_back_24)
-            binding.toolbar.setNavigationOnClickListener{
+            binding.leftIconLogin.setOnClickListener {
                 homeFragment = HomeFragment()
                 activity?.supportFragmentManager?.beginTransaction()?.replace(R.id.fragment_container, homeFragment)?.commit()
             }
+//            binding.toolbar.setNavigationOnClickListener{
+//
+//            }
         })
 
 
@@ -68,10 +71,12 @@ class ProductFragment : Fragment(),ProductsAdapter.OnProductClickListner {
 
 
     override fun onProductClick(mylist: Product, position: Int) {
-        brandViewModel.getProductsDetail(mylist.id)
-        productDetail = ProductDetail()
+//        brandViewModel.getProductsDetail(mylist.id)
+//        productDetail = ProductDetail()
+        var intent = Intent(requireContext(),ProductDetail::class.java)
+        intent.putExtra("product_id", mylist.id)
+        startActivity(intent)
 
-        activity?.supportFragmentManager?.beginTransaction()?.add(R.id.fragment_container, productDetail)?.commit()
     }
 
 

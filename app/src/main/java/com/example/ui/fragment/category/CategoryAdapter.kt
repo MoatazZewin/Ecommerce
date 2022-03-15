@@ -12,7 +12,8 @@ import com.example.ecommerce.databinding.CategaryItemBinding
 import com.example.example.Products
 
 
-class CategoryAdapter(val context:Context): RecyclerView.Adapter<CategoryAdapter.MyViewHolder>() {
+
+class CategoryAdapter(val context:Context, val onItemClickListener: OnItemClickListener): RecyclerView.Adapter<CategoryAdapter.MyViewHolder>() {
     private var productList = mutableListOf<Products>()
     fun addList(productList: List<Products>) {
         this.productList.clear()
@@ -37,10 +38,11 @@ class CategoryAdapter(val context:Context): RecyclerView.Adapter<CategoryAdapter
             Glide.with(context).apply {
                 load(productsModel.image!!.src).into(imageProduct)
             }
+            itemView.setOnClickListener{
+                onItemClickListener.onItemClickProduct(productsModel, position)
+            }
 
-//            itemView.setOnClickListener {
-//                onItemClickListener.onItemEditClickProduct(productsModel,position)
-//            }
+
         }
     }
 
@@ -48,6 +50,12 @@ class CategoryAdapter(val context:Context): RecyclerView.Adapter<CategoryAdapter
         val tvDesc: TextView = binding.tvDesc
         //private val tvPrice: TextView = binding.tvPrice
         val imageProduct: ImageView = binding.imageProduct
+
+
+
+    }
+    interface OnItemClickListener {
+        fun onItemClickProduct(product:Products, position :Int)
 
     }
 }

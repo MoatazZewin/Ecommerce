@@ -3,77 +3,85 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
-    app:startDestination="@id/homeFragment">
+    app:startDestination="@id/categoryFragment2">
     <fragment
-        android:id="@+id/homeFragment"
-        android:name="com.example.ecommerce.HomeFragment"
-        android:label="fragment_home"
-        tools:layout="@layout/fragment_home" >
+        android:id="@+id/kidFragment"
+        android:name="com.example.ui.fragment.category.KidFragment"
+        android:label="fragment_kid"
+        tools:layout="@layout/fragment_kid" >
         <action
-            android:id="@+id/action_homeFragment_to_productFragment"
-            app:destination="@id/productFragment" />
-        <action
-            android:id="@+id/action_homeFragment_to_favoriteFragment"
-            app:destination="@id/favoriteFragment" />
+            android:id="@+id/action_kidFragment_to_kidFilterFragment"
+            app:destination="@id/kidFilterFragment" />
     </fragment>
     <fragment
-        android:id="@+id/productFragment"
-        android:name="com.example.ui.fragment.ProductFragment"
-        android:label="fragment_product"
-        tools:layout="@layout/fragment_product" >
+        android:id="@+id/kidFilterFragment"
+        android:name="com.example.ui.fragment.category.KidFilterFragment"
+        android:label="fragment_kid_filter"
+        tools:layout="@layout/fragment_kid_filter" >
         <action
-            android:id="@+id/action_productFragment_to_productDetail"
-            app:destination="@id/productDetail" />
+            android:id="@+id/action_kidFilterFragment_to_kidFragment"
+            app:destination="@id/kidFragment" />
     </fragment>
     <fragment
-        android:id="@+id/productDetail"
-        android:name="com.example.ui.fragment.home.ProductDetail"
-        android:label="ProductDetail" />
+        android:id="@+id/manFragment"
+        android:name="com.example.ui.fragment.category.ManFragment"
+        android:label="fragment_man"
+        tools:layout="@layout/fragment_man" >
+        <action
+            android:id="@+id/action_manFragment_to_manFilterFragment"
+            app:destination="@id/manFilterFragment" />
+    </fragment>
     <fragment
-        android:id="@+id/meFragment"
-        android:name="com.example.ui.fragment.profile.MeFragment"
-        android:label="fragment_me"
-        tools:layout="@layout/fragment_me" >
+        android:id="@+id/manFilterFragment"
+        android:name="com.example.ui.fragment.category.ManFilterFragment"
+        android:label="fragment_man_filter"
+        tools:layout="@layout/fragment_man_filter" >
         <action
-            android:id="@+id/action_meFragment2_to_signInFragment"
-            app:destination="@id/signInFragment" />
+            android:id="@+id/action_manFilterFragment_to_manFragment"
+            app:destination="@id/manFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/saleFilterFragment"
+        android:name="com.example.ui.fragment.category.SaleFilterFragment"
+        android:label="fragment_sale_filter"
+        tools:layout="@layout/fragment_sale_filter" >
         <action
-            android:id="@+id/action_meFragment_to_test2"
-            app:destination="@id/test2" />
+            android:id="@+id/action_saleFilterFragment_to_saleFragment"
+            app:destination="@id/saleFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/saleFragment"
+        android:name="com.example.ui.fragment.category.SaleFragment"
+        android:label="fragment_sale"
+        tools:layout="@layout/fragment_sale" >
+        <action
+            android:id="@+id/action_saleFragment_to_saleFilterFragment"
+            app:destination="@id/saleFilterFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/womanFragment"
+        android:name="com.example.ui.fragment.category.WomanFragment"
+        android:label="fragment_woman"
+        tools:layout="@layout/fragment_woman" >
+        <action
+            android:id="@+id/action_womanFragment_to_womanFilterFragment"
+            app:destination="@id/womanFilterFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/womanFilterFragment"
+        android:name="com.example.ui.fragment.category.WomanFilterFragment"
+        android:label="fragment_woman_filter"
+        tools:layout="@layout/fragment_woman_filter" >
+        <action
+            android:id="@+id/action_womanFilterFragment_to_womanFragment"
+            app:destination="@id/womanFragment" />
     </fragment>
     <fragment
         android:id="@+id/categoryFragment2"
         android:name="com.example.ui.fragment.category.CategoryFragment"
-        android:label="fragment_c"
-        tools:layout="@layout/fragment_c" >
+        android:label="CategoryFragment" >
         <action
-            android:id="@+id/action_categoryFragment2_to_productDetail"
-            app:destination="@id/productDetail" />
+            android:id="@+id/action_categoryFragment2_to_manFragment"
+            app:destination="@id/manFragment" />
     </fragment>
-    <fragment
-        android:id="@+id/signInFragment"
-        android:name="com.example.ui.fragment.profile.SignInFragment"
-        android:label="SignInFragment" >
-        <action
-            android:id="@+id/action_signInFragment_to_signUpFragment"
-            app:destination="@id/signUpFragment" />
-    </fragment>
-    <fragment
-        android:id="@+id/signUpFragment"
-        android:name="com.example.ui.fragment.profile.SignUpFragment"
-        android:label="SignUpFragment" />
-    <fragment
-        android:id="@+id/signupViewModelFragment"
-        android:name="com.example.ui.registeration.SignupViewModelFragment"
-        android:label="fragment_signup_view_model"
-        tools:layout="@layout/fragment_signup_view_model" />
-    <fragment
-        android:id="@+id/test2"
-        android:name="com.example.model.test"
-        android:label="fragment_test"
-        tools:layout="@layout/fragment_test" />
-    <fragment
-        android:id="@+id/favoriteFragment"
-        android:name="com.example.ui.fragment.favorite.FavoriteFragment"
-        android:label="FavoriteFragment" />
 </navigation>

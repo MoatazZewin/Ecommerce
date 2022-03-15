@@ -1,8 +1,7 @@
 package com.example.model.retrofit
 
-import com.example.example.CategoryResponse
+import com.example.model.dataClass.category.CategoryResponse
 import com.example.model.dataClass.brand.Brands
-import com.example.model.dataClass.brand.SmartCollections
 import com.example.model.dataClass.customcollection.ResCustomCollection
 import com.example.model.dataClass.customer.CustomerModel
 import com.example.model.dataClass.customer.CustomersModel

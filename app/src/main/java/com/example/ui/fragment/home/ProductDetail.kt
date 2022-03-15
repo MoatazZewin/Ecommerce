@@ -5,6 +5,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProvider
 import com.example.ecommerce.MainActivity
 import com.example.ecommerce.databinding.FragmentProductDetailBinding
@@ -14,7 +15,7 @@ import com.example.ui.fragment.favorite.FavoriteAdapter
 import com.example.ui.viewmodel.BrandViewModel
 
 
-class ProductDetail : Fragment() {
+class ProductDetail : AppCompatActivity() {
 
     private lateinit var binding:FragmentProductDetailBinding
     private lateinit var brandViewModel: BrandViewModel
@@ -23,14 +24,14 @@ class ProductDetail : Fragment() {
     private lateinit var favorite:FavoriteProduct
 
 
-    override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
-        binding=FragmentProductDetailBinding.inflate(inflater)
-        brandViewModel=ViewModelProvider(requireActivity())[BrandViewModel::class.java]
-        pagerAdapter= PagerAdapter(requireContext())
-        brandViewModel.liveDataproductDetail.observe(requireActivity(),{
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        binding=FragmentProductDetailBinding.inflate(layoutInflater)
+        setContentView(binding.root)
+        brandViewModel=ViewModelProvider(this)[BrandViewModel::class.java]
+        pagerAdapter= PagerAdapter(this)
+        brandViewModel.getProductsDetail(intent.extras!!.getLong("product_id")  )
+        brandViewModel.liveDataproductDetail.observe(this,{
 
             pagerAdapter.setContentList(it.product!!.images)
             binding.viewPagerMain.adapter=pagerAdapter
@@ -43,7 +44,7 @@ class ProductDetail : Fragment() {
 //            binding.viewPagerMain.adapter=pagerAdapter
             var product=it.product
             binding.addToCart.setOnClickListener {
-                product?.let { it1 -> (requireActivity() as MainActivity).addtoCard(it1) }
+                product?.let { it1 -> (this as MainActivity).addtoCard(it1) }
             }
 
             favorite= FavoriteProduct(
@@ -57,16 +58,13 @@ class ProductDetail : Fragment() {
             )
 
         })
-        return binding.root
-    }
-
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
         binding.addToWishList.setOnClickListener {
             brandViewModel.insert(favorite)
         }
 
     }
+
+
 
 
 }
