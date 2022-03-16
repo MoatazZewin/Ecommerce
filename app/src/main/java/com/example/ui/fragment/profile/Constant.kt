@@ -1,7 +1,7 @@
 package com.example.ui.fragment.profile
 
 object Constant {
-    const val BASE_URL = "https://jets2022.myshopify.com/admin/api/2022-01/"
+    const val BASE_URL = "jets-ismailia.myshopify.com/admin/api/2022-01/"
     //location request
     const val LOCATION_REQUEST_CODE = 0
 
@@ -13,7 +13,7 @@ object Constant {
     const val KIDS_ID:Long=398034632935
     const val ALL_DATA_ROUTE ="ALL_DATA_ROUTE"
 
-    //Bundle Keys
+    //Bundle FKeys
     const val BRAND_KEY = "BrandList"
     const val SUB_COLLECTION_NAME = "subCollectionsName"
     const val SUB_COLLECTION_ID =  "collectionsId"

@@ -33,18 +33,18 @@ interface InterfacApi {
 
 
 
-    @GET("collections/398033617127/products.json")
+    @GET("collections/272068509743/products.json")
     suspend  fun getOnHomeProductsList(): Response<ResProducts>
-
-    @GET("collections/398034600167/products.json")
+    /*398034600167*/
+    @GET("collections/272069066799/products.json")
     suspend fun getWomenProductsList(): Response<CategoryResponse>
-    @GET("collections/398034632935/products.json")
+    @GET("collections/272069099567/products.json")
     suspend fun getKidsProductsList(): Response<CategoryResponse>
     //
-    @GET("collections/398034567399/products.json")
+    @GET("collections/272069034031/products.json")
     suspend fun getMenProductsList(): Response<CategoryResponse>
 
-    @GET("collections/398034665703/products.json")
+    @GET("collections/272069132335/products.json")
     suspend fun getOnSaleProductsList(): Response<CategoryResponse>
 
     //retrieve Single product
