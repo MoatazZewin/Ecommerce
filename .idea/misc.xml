@@ -89,12 +89,14 @@
         <entry key="..\:/git/Ecommerce/app/src/main/res/layout/slider_image_item.xml" value="0.20416666666666666" />
         <entry key="..\:/git/Ecommerce/app/src/main/res/layout/wish_list_item.xml" value="0.2" />
         <entry key="..\:/itiGraduationProject/spare/Ecommerce/app/src/main/res/drawable-v24/ic_add.xml" value="0.1125" />
+        <entry key="..\:/itiGraduationProject/spare/Ecommerce/app/src/main/res/drawable-v24/ic_baseline_perm_identity_24.xml" value="0.16666666666666666" />
         <entry key="..\:/itiGraduationProject/spare/Ecommerce/app/src/main/res/drawable-v24/splash_bg.xml" value="0.16666666666666666" />
         <entry key="..\:/itiGraduationProject/spare/Ecommerce/app/src/main/res/layout/activity_splash_screen.xml" value="0.1925925925925926" />
         <entry key="..\:/itiGraduationProject/spare/Ecommerce/app/src/main/res/layout/categary_item.xml" value="0.1925925925925926" />
         <entry key="..\:/itiGraduationProject/spare/Ecommerce/app/src/main/res/layout/fragment_home.xml" value="0.1" />
         <entry key="..\:/itiGraduationProject/spare/Ecommerce/app/src/main/res/layout/fragment_order_confirmation.xml" value="0.1" />
         <entry key="..\:/itiGraduationProject/spare/Ecommerce/app/src/main/res/layout/fragment_sign_in.xml" value="0.33" />
+        <entry key="..\:/itiGraduationProject/spare/Ecommerce/app/src/main/res/layout/fragment_sign_up.xml" value="0.1935185185185185" />
       </map>
     </option>
   </component>
