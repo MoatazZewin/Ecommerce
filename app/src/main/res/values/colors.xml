@@ -11,21 +11,17 @@
     <color name="blue">#030693</color>
     <color name="green">#409313</color>
     <color name="yello">#FFB900</color>
-    ////////////////esraa/////////////
     <color name="backgroung">#66FAEED6</color>
-    ////////////////fayza/////////////
 
-    ////////////////ola/////////////
    <color name="dark_gray">#757777</color>
     <color name="light_gray">#DFDFDF</color>
     <color name="light_blue">#666EFB</color>
     <color name="red">#EC7373</color>
-    ////////////////abdelrahman/////////////
     <color name="grey">#EBEBEB</color>
     <color name="redLight">#F40606</color>
     <color name="background">#E8E2DC</color>
     <color name="darkRed">#EEFF0000</color>
-    //
+    //////////////////////
     <color name="bgColor1">#14274f</color>
     <color name="bgColor2">#304D88</color>
 </resources>
