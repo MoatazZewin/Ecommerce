@@ -19,6 +19,8 @@ class SharedPreferencesProvider(context: Context) {
         private const val LONG_SHARED_PREF = "LONG_SHARED_PREF"
         private const val ADDRESS = "ADDRESS"
         private const val IS_FIRST_TIME_LAUNCH = "IS_FIRST_TIME_LAUNCH"
+        private const val IS_SIGN_IN = "IS_SIGN_IN"
+
 
         // user Info
         private const val PHONE = "PHONE"
@@ -114,6 +116,13 @@ class SharedPreferencesProvider(context: Context) {
         return preferences.getString(Constant.ALL_DATA_ROUTE, null)?.let { settingsFromJson(it) }
             ?: CustomerInfo.getDefault()
     }
+    fun checkSignIn(isSignIn: Boolean) {
+        editor.putBoolean(IS_SIGN_IN, isSignIn)
+        editor.commit()
+    }
+
+    val isSignIn: Boolean
+        get() = pref.getBoolean(IS_SIGN_IN, false)
 }
 
 data class CustomerInfo(var customer: Customer?) {

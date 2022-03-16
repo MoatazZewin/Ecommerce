@@ -20,13 +20,12 @@ class SignInViewModel(application: Application, val AuthRepo: AuthRepo) :
 
 
     @RequiresApi(Build.VERSION_CODES.M)
-    fun getData(email: String) {
+    fun getData(email: String,pass:String) {
         viewModelScope.launch {
-            val response: Either<CustomersModel, LoginErrors> = AuthRepo.signIn(email)
 
-            when (response) {
+            when (val response: Either<CustomersModel, LoginErrors> = AuthRepo.signIn(email,pass)) {
                 is Either.Error -> when (response.errorCode) {
-                    LoginErrors.NoInternetConnection -> {
+                    LoginErrors.ConnectionFiled -> {
                         Toast.makeText(
                             getApplication(),
                             "NoInternetConnection" + response.message,
@@ -41,7 +40,14 @@ class SignInViewModel(application: Application, val AuthRepo: AuthRepo) :
                             Toast.LENGTH_SHORT
                         ).show()
                     }
-                    LoginErrors.CustomerNotFound -> {
+                    LoginErrors.IncorrectPassword->{
+                        Toast.makeText(
+                            getApplication(),
+                            "IncorrectEmailOrPassword" + response.message,
+                            Toast.LENGTH_SHORT
+                        ).show()
+                    }
+                    LoginErrors.UserNotFound -> {
                         Toast.makeText(
                             getApplication(),
                             "CustomerNotFound" + response.message,

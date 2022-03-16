@@ -20,8 +20,11 @@ class SignInFragment : Fragment() {
     lateinit var binding: FragmentSignInBinding
     lateinit var meFragment: MeFragment
     lateinit var signUnFragment: SignUpFragment
-    lateinit var confirmSinginFragment: ConfirmSinginFragment
     private lateinit var userEmail: String
+    private lateinit var pass: String
+    val viewModel by lazy {
+        SignInViewModel.create(this)
+    }
 
 
     @RequiresApi(Build.VERSION_CODES.M)
@@ -38,15 +41,13 @@ class SignInFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         click()
-        val viewModel by lazy {
-            SignInViewModel.create(this)
-        }
+
 
 
         binding.buttonCreate.setOnClickListener {
             if (validteForm()) {
                 Log.d("email", "" + userEmail)
-                viewModel.getData(userEmail)
+                viewModel.getData(userEmail, pass)
                 viewModel.loginSuccess.observe(viewLifecycleOwner) {
                     if (it!!) {
                         Toast.makeText(requireContext(), "done for email", Toast.LENGTH_LONG)
@@ -58,6 +59,8 @@ class SignInFragment : Fragment() {
         }
 
     }
+
+    @RequiresApi(Build.VERSION_CODES.M)
     fun click() {
         binding.textViewCreate.setOnClickListener {
 //            findNavController().navigate(R.id.signUpFragment)
@@ -72,19 +75,38 @@ class SignInFragment : Fragment() {
             activity?.supportFragmentManager?.beginTransaction()
                 ?.replace(R.id.fragment_container, meFragment)?.commit()
         }
-
-        binding.buttonCreate.setOnClickListener{
-            confirmSinginFragment = ConfirmSinginFragment()
-            activity?.supportFragmentManager?.beginTransaction()
-                ?.replace(R.id.fragment_container, confirmSinginFragment)?.commit()
+        binding.buttonCreate.setOnClickListener {
+            if (validteForm()) {
+                Log.d("email", "" + userEmail + "pass" + pass)
+                viewModel.getData(userEmail, pass)
+                viewModel.loginSuccess.observe(viewLifecycleOwner) {
+                    if (it!!) {
+                        Toast.makeText(requireContext(), "Successfully Login", Toast.LENGTH_LONG)
+                            .show()
+                    }
+                }
+            }
         }
+
+//        binding.buttonCreate.setOnClickListener{
+//            confirmSinginFragment = ConfirmSinginFragment()
+//            activity?.supportFragmentManager?.beginTransaction()
+//                ?.replace(R.id.fragment_container, confirmSinginFragment)?.commit()
+//        }
     }
 
     private fun validteForm(): Boolean {
         userEmail = binding.editTextTextPersonName.text.toString()
+        pass = binding.etPassword.text.toString()
+
         if (userEmail.isEmpty()) {
             binding.editTextTextPersonName.requestFocus()
             binding.editTextTextPersonName.error = "Required"
+            return false
+        }
+        if (pass.isEmpty()) {
+            binding.etPassword.requestFocus()
+            binding.etPassword.error = "Required"
             return false
         }
         return true

@@ -12,7 +12,7 @@
         android:theme="@style/Theme.Ecommerce">
 
         <activity
-            android:name=".MainActivity"
+            android:name="com.example.ui.activity.MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

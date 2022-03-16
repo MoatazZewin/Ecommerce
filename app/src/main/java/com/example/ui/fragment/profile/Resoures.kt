@@ -16,5 +16,7 @@ enum class RepoErrors {
 enum class LoginErrors {
     NoInternetConnection,
     ServerError,
-    CustomerNotFound,
+    UserNotFound,
+    IncorrectPassword,
+    ConnectionFiled
 }

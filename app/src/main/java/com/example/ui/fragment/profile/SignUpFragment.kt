@@ -23,6 +23,8 @@ class SignUpFragment : Fragment() {
     private lateinit var userEmail: String
     private lateinit var userPassword: String
     private lateinit var userConfirmPassword: String
+    private lateinit var pass: String
+
 
 
     private val viewModel by lazy {

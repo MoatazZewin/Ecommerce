@@ -106,6 +106,20 @@
                     app:layout_constraintStart_toEndOf="@+id/imageView"
                     app:layout_constraintTop_toBottomOf="@+id/logintxt" />
 
+
+                <EditText
+                    android:id="@+id/etPassword"
+                    android:layout_width="300dp"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:hint="Password"
+                    android:inputType="textPersonName"
+                    android:paddingLeft="15dp"
+                    app:layout_constraintEnd_toEndOf="@+id/editTextTextPersonName"
+                    app:layout_constraintHorizontal_bias="0.071"
+                    app:layout_constraintStart_toEndOf="@+id/imageView"
+                    app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName" />
+
                 <Button
                     android:id="@+id/button_create"
                     style="@style/myButton"

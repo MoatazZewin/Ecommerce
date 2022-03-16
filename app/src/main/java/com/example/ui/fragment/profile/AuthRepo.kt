@@ -20,11 +20,6 @@ class AuthRepo(
             return if (Connectivity.isOnline(application.applicationContext)) {
                 val res = api.register(customer)
                 if (res.isSuccessful) {
-                    sharedPref.update {
-                        it.copy(customer = res.body()?.customer)
-                    }
-                    Log.d("customerINFO",res.body()?.customer.toString())
-
 
                     Log.d("body", res.body()?.customer.toString())
 
@@ -40,28 +35,31 @@ class AuthRepo(
     }
 
     @RequiresApi(Build.VERSION_CODES.M)
-    suspend fun signIn(email: String): Either<CustomersModel, LoginErrors> {
+    suspend fun signIn(email: String, pass: String): Either<CustomersModel, LoginErrors> {
         return try {
             if (Connectivity.isOnline(application.applicationContext)) {
-                val res = ShopifyServices.login()
+                val res = api.login()
                 if (res.isSuccessful) {
 
                     val customer = res.body()?.customer?.first {
                         it?.email.equals(email)
-                    } ?: return Either.Error(LoginErrors.CustomerNotFound, "CustomerNotFound")
-
-                    sharedPref.update {
-                        it.copy(
-                            customer = customer
-                        )
-                    }
-                    Log.d("signBody", res.body()!!.customer.toString())
+                    } ?: return Either.Error(LoginErrors.UserNotFound, "User Not Found")
+                    if (customer.lastName.equals(pass)) {
+                        sharedPref.update {
+                            it.copy(
+                                customer = customer
+                            )
+                        }
+                    } else return Either.Error(
+                        LoginErrors.IncorrectPassword,
+                        "Please Insert Correct email or password"
+                    )
 
                     return Either.Success(res.body()!!)
                 } else
                     return Either.Error(LoginErrors.ServerError, res.message())
             } else
-                return Either.Error(LoginErrors.NoInternetConnection, "NoInternetConnection")
+                return Either.Error(LoginErrors.ConnectionFiled, "Connection Filed")
 
         } catch (t: Throwable) {
             Either.Error(LoginErrors.ServerError, t.message)
