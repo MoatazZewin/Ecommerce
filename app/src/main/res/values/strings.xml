@@ -1,10 +1,10 @@
 <resources>
-    <string name="app_name">Ecommerce</string>
+    <string name="app_name">MERCATO</string>
     <string name="login">Login to your account</string>
     <string name="email">Email</string>
     <string name="forgotpassword">FORGOT PASSWORD?</string>
     <string name="login_btn">LOGIN</string>
-    <string name="newOnEcommerce">New on Ecommerce?</string>
+    <string name="newOnEcommerce">New on Mercato?</string>
     <string name="creatAnAccount">CREATE AN ANCCOUNT</string>
     <string name="create_acount">Create Account</string>
     <string name="title_activity_main2">MainActivity2</string>

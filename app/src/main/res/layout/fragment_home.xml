@@ -62,11 +62,13 @@
 
       <androidx.recyclerview.widget.RecyclerView
           android:id="@+id/recyclerBrand"
-          android:layout_width="match_parent"
+          android:layout_width="0dp"
           android:layout_height="0dp"
           app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
 
           app:layout_constraintBottom_toBottomOf="parent"
+          app:layout_constraintEnd_toEndOf="parent"
+          app:layout_constraintStart_toStartOf="parent"
           app:layout_constraintTop_toBottomOf="@+id/viewpager"
           app:spanCount="3"
           tools:listitem="@layout/categary_item" />
