@@ -14,11 +14,7 @@ class SharedPreferencesProvider(context: Context) {
         private lateinit var editor: SharedPreferences.Editor
         private const val PREF_NAME = "myPref"
 
-        // Shared preferences for lat,lon and address
-        private const val LAT_SHARED_PREF = "LAT_SHARED_PREF"
-        private const val LONG_SHARED_PREF = "LONG_SHARED_PREF"
-        private const val ADDRESS = "ADDRESS"
-        private const val IS_FIRST_TIME_LAUNCH = "IS_FIRST_TIME_LAUNCH"
+
         private const val IS_SIGN_IN = "IS_SIGN_IN"
 
 
@@ -44,25 +40,10 @@ class SharedPreferencesProvider(context: Context) {
         }
     }
 
-    fun setLocation(latitude: String?, longitude: String?, address: String?) {
-        editor.putString(LAT_SHARED_PREF, latitude)
-        editor.putString(LONG_SHARED_PREF, longitude)
-        editor.putString(ADDRESS, address)
-        editor.commit()
-    }
 
 
-    val getLocation: Array<String?>
-        get() {
-            val location = arrayOfNulls<String>(3)
-            val lat = pref.getString(LAT_SHARED_PREF, "null")
-            val lng = pref.getString(LONG_SHARED_PREF, "null")
-            val add = pref.getString(ADDRESS, "Address")
-            location[0] = lat
-            location[1] = lng
-            location[2] = add
-            return location
-        }
+
+
 
     fun setUserInfo(//userAddress: String?,
         phone: String?, name: String?
@@ -83,13 +64,7 @@ class SharedPreferencesProvider(context: Context) {
             return info
         }
 
-    fun setFirstTimeLaunch(isFirstTime: Boolean) {
-        editor.putBoolean(IS_FIRST_TIME_LAUNCH, isFirstTime)
-        editor.commit()
-    }
 
-    val isFirstTimeLaunch: Boolean
-        get() = pref.getBoolean(IS_FIRST_TIME_LAUNCH, true)
 
 
     private fun settingsToJson(settings: CustomerInfo): String {

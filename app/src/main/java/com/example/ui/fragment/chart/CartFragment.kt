@@ -10,6 +10,7 @@ import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.example.ecommerce.HomeFragment
 import com.example.ecommerce.R
 import com.example.ecommerce.databinding.FragmentAllWishListBinding
 import com.example.ecommerce.databinding.FragmentCBinding
@@ -24,6 +25,7 @@ class CartFragment : Fragment() {
     private lateinit var  authRepo: AuthRepo
     private lateinit var binding: FragmentChartBinding
     //    private lateinit var viewModel: FavoriteViewModel
+    private lateinit var homeFragment: HomeFragment
     private lateinit var cartAdapter: CartAdapter
     val viewModel by lazy {
         CartViewModel.create(this)
@@ -45,6 +47,9 @@ class CartFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        binding.leftIconInLogin.setOnClickListener {
+            activity?.supportFragmentManager?.beginTransaction()?.replace(R.id.fragment_container, homeFragment)?.commit()
+        }
         if (viewModel.repo.sharedPref.getSettings().customer == null)
         {
             binding.Login.visibility = View.GONE

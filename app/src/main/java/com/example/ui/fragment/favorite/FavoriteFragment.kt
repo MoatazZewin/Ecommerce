@@ -11,6 +11,7 @@ import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.example.ecommerce.HomeFragment
 import com.example.ecommerce.R
 import com.example.ecommerce.databinding.FragmentAllWishListBinding
 import com.example.ui.fragment.profile.AuthRepo
@@ -21,6 +22,7 @@ class FavoriteFragment  : Fragment(){
     private lateinit var binding: FragmentAllWishListBinding
 //    private lateinit var viewModel: FavoriteViewModel
     private lateinit var favAdapter: FavoriteAdapter
+    private lateinit var homeFragment:HomeFragment
     val viewModel by lazy {
         FavoriteViewModel.create(this)
     }
@@ -41,6 +43,9 @@ class FavoriteFragment  : Fragment(){
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        binding.leftIconInLogin.setOnClickListener {
+            activity?.supportFragmentManager?.beginTransaction()?.replace(R.id.fragment_container, homeFragment)?.commit()
+        }
         if (viewModel.repo.sharedPref.getSettings().customer == null)
         {
             binding.Login.visibility = View.GONE
