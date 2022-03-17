@@ -42,16 +42,27 @@
                     android:textSize="25sp"></TextView>
 
                 <ImageView
+                    android:id="@+id/toCart"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="45dp"
-                    android:src="@drawable/ic_baseline_shopping_cart_24"></ImageView>
-
+                    android:layout_marginStart="65dp"
+                    android:src="@drawable/ic_baseline_shopping_cart_24"
+                    tools:layout_editor_absoluteX="295dp"
+                    tools:layout_editor_absoluteY="16dp" />
                 <ImageView
+                    android:id="@+id/toFav"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="15dp"
-                    android:src="@drawable/ic_baseline_settings_24"></ImageView>
+                    android:layout_marginStart="10dp"
+                    android:src="@drawable/ic_baseline_favorite_24"
+                    tools:layout_editor_absoluteX="334dp"
+                    tools:layout_editor_absoluteY="16dp" />
+                <ImageView
+                    android:id="@+id/toSettings"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:src="@drawable/ic_baseline_settingss" />
             </androidx.appcompat.widget.Toolbar>
         </androidx.constraintlayout.widget.ConstraintLayout>
 
