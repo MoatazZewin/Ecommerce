@@ -10,13 +10,9 @@ import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.example.ecommerce.HomeFragment
+import com.example.ui.fragment.home.HomeFragment
 import com.example.ecommerce.R
-import com.example.ecommerce.databinding.FragmentAllWishListBinding
-import com.example.ecommerce.databinding.FragmentCBinding
 import com.example.ecommerce.databinding.FragmentChartBinding
-import com.example.ui.fragment.favorite.FavoriteAdapter
-import com.example.ui.fragment.favorite.FavoriteViewModel
 import com.example.ui.fragment.profile.AuthRepo
 import com.example.ui.fragment.profile.SignInFragment
 

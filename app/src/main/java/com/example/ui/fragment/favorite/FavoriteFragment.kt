@@ -8,14 +8,12 @@ import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
-import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.example.ecommerce.HomeFragment
+import com.example.ui.fragment.home.HomeFragment
 import com.example.ecommerce.R
 import com.example.ecommerce.databinding.FragmentAllWishListBinding
 import com.example.ui.fragment.profile.AuthRepo
-import com.example.ui.fragment.profile.ConfirmSinginFragment
 import com.example.ui.fragment.profile.SignInFragment
 
 class FavoriteFragment  : Fragment(){
@@ -24,7 +22,7 @@ class FavoriteFragment  : Fragment(){
     private lateinit var binding: FragmentAllWishListBinding
 //    private lateinit var viewModel: FavoriteViewModel
     private lateinit var favAdapter: FavoriteAdapter
-    private lateinit var homeFragment:HomeFragment
+    private lateinit var homeFragment: HomeFragment
     private lateinit var singinFragment: SignInFragment
     val viewModel by lazy {
         FavoriteViewModel.create(this)

@@ -2,12 +2,9 @@ package com.example.ui.activity
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
 import androidx.fragment.app.Fragment
-import com.example.ecommerce.HomeFragment
+import com.example.ui.fragment.home.HomeFragment
 import com.example.ecommerce.R
-import com.example.model.dataClass.productdetail.Product
-import com.example.ui.adapter.SliderAdapter
 import com.example.ui.fragment.category.CategoryFragment
 import com.example.ui.fragment.home.AddtoCard
 import com.example.ui.fragment.profile.MeFragment

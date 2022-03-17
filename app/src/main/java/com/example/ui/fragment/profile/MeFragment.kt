@@ -6,11 +6,9 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
-import androidx.navigation.fragment.findNavController
 import com.example.ecommerce.R
 import com.example.ecommerce.databinding.FragmentMeBinding
-import com.example.ui.fragment.ProductFragment
-import com.example.ui.fragment.SettingFragment
+import com.example.ui.SettingFragment
 import com.example.ui.fragment.chart.CartFragment
 import com.example.ui.fragment.favorite.FavoriteFragment
 import com.example.ui.fragment.favorite.FavoriteViewModel

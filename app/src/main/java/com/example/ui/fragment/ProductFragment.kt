@@ -7,8 +7,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.lifecycle.ViewModelProvider
-import androidx.navigation.findNavController
-import com.example.ecommerce.HomeFragment
+import com.example.ui.fragment.home.HomeFragment
 import com.example.ecommerce.R
 import com.example.ecommerce.databinding.FragmentProductBinding
 import com.example.model.dataClass.product.Product

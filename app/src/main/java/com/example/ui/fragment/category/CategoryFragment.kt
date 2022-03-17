@@ -5,10 +5,9 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.navigation.fragment.findNavController
 import com.example.ecommerce.R
 import com.example.ecommerce.databinding.FragmentCBinding
-import com.example.ui.fragment.SettingFragment
+import com.example.ui.SettingFragment
 import com.example.ui.fragment.chart.CartFragment
 import com.example.ui.fragment.favorite.FavoriteFragment
 import com.ogaclejapan.smarttablayout.utils.v4.FragmentPagerItemAdapter
