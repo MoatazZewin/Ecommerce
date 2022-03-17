@@ -14,6 +14,7 @@ class ProductsAdapter (val context: Context, val onProductClickListner:OnProduct
     fun addList(myList:List<Product>){
         this.ProductList.clear()
         ProductList.addAll(myList)
+        notifyDataSetChanged()
     }
 
     inner class AdapterProductViewHolder(binding: CategaryItemBinding): RecyclerView.ViewHolder(binding.root) {

@@ -5,14 +5,18 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import com.example.ecommerce.R
 import com.example.ecommerce.databinding.FragmentAboutBinding
 import com.example.ecommerce.databinding.FragmentSettingBinding
 import com.example.ecommerce.databinding.FragmentWomanBinding
+import com.example.model.dataClass.customer.Customer
+import com.example.model.dataClass.customer.CustomerModel
 import com.example.ui.fragment.ContactUsFragment
 import com.example.ui.fragment.category.WomanFilterFragment
 import com.example.ui.fragment.profile.AuthRepo
 import com.example.ui.fragment.profile.SharedPreferencesProvider
+import com.example.ui.fragment.profile.SignUpViewModel
 import com.example.ui.settings.AboutFragment
 
 // TODO: Rename parameter arguments, choose names that match
@@ -26,6 +30,9 @@ private const val ARG_PARAM2 = "param2"
  * create an instance of this fragment.
  */
 class SettingFragment : Fragment() {
+    private val viewModel by lazy {
+        SignUpViewModel.create(this)
+    }
     private lateinit var _binding: FragmentSettingBinding
     private  var about=AboutFragment()
     private  var contact=ContactUsFragment()
@@ -68,11 +75,21 @@ class SettingFragment : Fragment() {
 
         }
         _binding.signout.setOnClickListener {
-           auth!!.sharedPref.update {
-               it.copy(
+//            auth!!.sharedPref
+            Toast.makeText(requireContext(), "Successfully Logout", Toast.LENGTH_LONG)
+                .show()
+
+            SharedPreferencesProvider(requireContext()).update {
+                it.copy(
                    customer = null
                )
-           }
+            }
+//           setting?.update {
+//
+//           }
+            val customer:Customer? = null
+
+
         }
 
 

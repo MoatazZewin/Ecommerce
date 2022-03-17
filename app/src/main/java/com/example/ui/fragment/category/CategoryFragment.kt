@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.example.ecommerce.R
+import com.example.ecommerce.SearchFragment
 import com.example.ecommerce.databinding.FragmentCBinding
 import com.example.ui.SettingFragment
 import com.example.ui.fragment.chart.CartFragment
@@ -19,6 +20,7 @@ class CategoryFragment : Fragment() {
     lateinit var binding:FragmentCBinding
     lateinit var cartFragment:CartFragment
     lateinit var settingFragment: SettingFragment
+    lateinit var searchFragment : SearchFragment
 
 
     override fun onCreateView(
@@ -61,6 +63,11 @@ class CategoryFragment : Fragment() {
             settingFragment = SettingFragment()
             activity?.supportFragmentManager?.beginTransaction()
                 ?.replace(R.id.fragment_container, settingFragment)?.commit()
+        }
+        binding.leftIconLogin.setOnClickListener {
+            searchFragment = SearchFragment()
+            activity?.supportFragmentManager?.beginTransaction()
+                ?.replace(R.id.fragment_container, searchFragment)?.commit()
         }
     }
     }

@@ -13,6 +13,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.ui.fragment.home.HomeFragment
 import com.example.ecommerce.R
 import com.example.ecommerce.databinding.FragmentChartBinding
+import com.example.ui.fragment.category.CategoryFragment
 import com.example.ui.fragment.profile.AuthRepo
 import com.example.ui.fragment.profile.SignInFragment
 
@@ -24,6 +25,7 @@ class CartFragment : Fragment() {
     //    private lateinit var viewModel: FavoriteViewModel
     private lateinit var homeFragment: HomeFragment
     private lateinit var cartAdapter: CartAdapter
+    private lateinit var categoryFragment : CategoryFragment
     private lateinit var singinFragment:SignInFragment
     val viewModel by lazy {
         CartViewModel.create(this)
@@ -45,8 +47,9 @@ class CartFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        categoryFragment = CategoryFragment()
         binding.leftIconInLogin.setOnClickListener {
-            activity?.supportFragmentManager?.beginTransaction()?.replace(R.id.fragment_container, homeFragment)?.commit()
+            activity?.supportFragmentManager?.beginTransaction()?.replace(R.id.fragment_container, categoryFragment)?.commit()
         }
         singinFragment = SignInFragment()
         binding.buttonSingin.setOnClickListener{

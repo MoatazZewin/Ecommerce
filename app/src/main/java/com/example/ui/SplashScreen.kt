@@ -26,6 +26,7 @@ class SplashScreen : AppCompatActivity() {
         lunchLogoAnimation()
         Handler(Looper.getMainLooper()).postDelayed({
             startActivity(splashIntint)
+            finishAffinity()
         },3000)
 
 

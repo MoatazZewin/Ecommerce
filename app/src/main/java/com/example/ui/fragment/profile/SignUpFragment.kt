@@ -24,6 +24,8 @@ class SignUpFragment : Fragment() {
     private lateinit var userPassword: String
     private lateinit var userConfirmPassword: String
     private lateinit var pass: String
+    private lateinit var signInFragment: SignInFragment
+
 
 
 
@@ -45,6 +47,11 @@ class SignUpFragment : Fragment() {
     @RequiresApi(Build.VERSION_CODES.M)
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        binding.leftIconLogin.setOnClickListener {
+            signInFragment = SignInFragment()
+            activity?.supportFragmentManager?.beginTransaction()
+                ?.replace(R.id.fragment_container, signInFragment)?.commit()
+        }
 
         binding.buttonCreate.setOnClickListener {
             if (validateForm()) {
@@ -66,6 +73,11 @@ class SignUpFragment : Fragment() {
                             "Registered ",
                             Toast.LENGTH_LONG
                         ).show()
+                        signInFragment = SignInFragment()
+                        activity?.supportFragmentManager?.beginTransaction()
+                            ?.replace(R.id.fragment_container, signInFragment)?.commit()
+
+
                     } else
                         Toast.makeText(
                             requireContext(),

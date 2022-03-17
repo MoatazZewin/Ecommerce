@@ -13,6 +13,7 @@ import com.example.ecommerce.databinding.FragmentProductBinding
 import com.example.model.dataClass.product.Product
 import com.example.ui.adapter.ProductsAdapter
 import com.example.ui.fragment.home.ProductDetail
+import com.example.ui.fragment.profile.SignUpViewModel
 import com.example.ui.viewmodel.BrandViewModel
 
 
