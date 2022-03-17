@@ -9,6 +9,7 @@ import com.example.ecommerce.databinding.FragmentHomeBinding
 import com.example.model.dataClass.brand.SmartCollections
 import com.example.ui.adapter.AdapterBrand
 import com.example.ui.fragment.ProductFragment
+import com.example.ui.fragment.chart.CartFragment
 import com.example.ui.fragment.favorite.FavoriteFragment
 import com.example.ui.fragment.profile.SignUpFragment
 import com.example.ui.viewmodel.BrandViewModel
@@ -20,6 +21,7 @@ class HomeFragment : Fragment(), AdapterBrand.OnBrandClickListner {
     private lateinit var adapterBrand: AdapterBrand
     lateinit var proudectFragment: ProductFragment
     lateinit var favFragment: FavoriteFragment
+    lateinit var cartFragment: CartFragment
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -72,6 +74,12 @@ class HomeFragment : Fragment(), AdapterBrand.OnBrandClickListner {
             activity?.supportFragmentManager?.beginTransaction()
                 ?.replace(R.id.fragment_container, favFragment)?.commit()
         }
+        binding.toCart.setOnClickListener{
+                cartFragment = CartFragment()
+            activity?.supportFragmentManager?.beginTransaction()
+                ?.replace(R.id.fragment_container, cartFragment)?.commit()
+        }
+
     }
 
 

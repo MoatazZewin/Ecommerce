@@ -5,6 +5,7 @@ import androidx.lifecycle.*
 import com.example.model.dataClass.brand.Brands
 import com.example.model.dataClass.product.ResProducts
 import com.example.model.dataClass.productdetail.ProductDetails
+import com.example.model.local.cartroom.CartProductData
 import com.example.model.local.favoriteRoom.FavoriteProduct
 import com.example.model.retrofit.RetrofitInstance
 import com.example.ui.repository.Repository
@@ -15,8 +16,12 @@ class BrandViewModel(application:Application):AndroidViewModel(application){
 
     private val repositry = Repository(RetrofitInstance.api,application)
 
+
     fun insert(favoriteProduct: FavoriteProduct)=viewModelScope.launch {
         repositry.insert(favoriteProduct)
+    }
+    fun insertTocart(cartProductData: CartProductData)=viewModelScope.launch {
+        repositry.saveAllCartList(cartProductData)
     }
 
     private val brandRepositry = Repository(RetrofitInstance.api,application)

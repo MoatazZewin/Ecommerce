@@ -1,42 +1,46 @@
-package com.example.ui.fragment.favorite
+package com.example.ui.fragment.chart
 
 import android.app.Application
 import android.os.Bundle
+import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
-import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
-import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.ecommerce.R
 import com.example.ecommerce.databinding.FragmentAllWishListBinding
+import com.example.ecommerce.databinding.FragmentCBinding
+import com.example.ecommerce.databinding.FragmentChartBinding
+import com.example.ui.fragment.favorite.FavoriteAdapter
+import com.example.ui.fragment.favorite.FavoriteViewModel
 import com.example.ui.fragment.profile.AuthRepo
 
-class FavoriteFragment  : Fragment(){
+
+class CartFragment : Fragment() {
     private lateinit var application: Application
     private lateinit var  authRepo: AuthRepo
-    private lateinit var binding: FragmentAllWishListBinding
-//    private lateinit var viewModel: FavoriteViewModel
-    private lateinit var favAdapter: FavoriteAdapter
+    private lateinit var binding: FragmentChartBinding
+    //    private lateinit var viewModel: FavoriteViewModel
+    private lateinit var cartAdapter: CartAdapter
     val viewModel by lazy {
-        FavoriteViewModel.create(this)
+        CartViewModel.create(this)
     }
 
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+
+    }
 
     override fun onCreateView(
-        inflater: LayoutInflater,
-        container: ViewGroup?,
+        inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        binding = DataBindingUtil.inflate(inflater, R.layout.fragment_all_wish_list, container, false)
-//        viewModel = ViewModelProvider(this)[FavoriteViewModel::class.java]
-
-
+        // Inflate the layout for this fragment
+        binding = DataBindingUtil.inflate(inflater, R.layout.fragment_chart, container, false)
         return binding.root
-
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -52,11 +56,12 @@ class FavoriteFragment  : Fragment(){
             binding.emptyAnimationView.visibility = View.GONE
             binding.emptyText.visibility = View.GONE
             binding.buttonSingin.visibility =View.GONE
-            viewModel.getAllFav().observe(viewLifecycleOwner, Observer { product ->
-                favAdapter= FavoriteAdapter(product,requireContext(),viewModel)
+            viewModel.getAllCartList().observe(viewLifecycleOwner, Observer { product ->
+                cartAdapter= CartAdapter(product,requireContext(),viewModel)
                 binding.wishRecyclerView.apply {
-                    adapter=favAdapter
-                    layoutManager=GridLayoutManager(requireContext(),3,LinearLayoutManager.VERTICAL,false)
+                    adapter=cartAdapter
+                    layoutManager=
+                        GridLayoutManager(requireContext(),3, LinearLayoutManager.VERTICAL,false)
                 }
 
             })
@@ -64,4 +69,6 @@ class FavoriteFragment  : Fragment(){
 
 
     }
+
+
 }

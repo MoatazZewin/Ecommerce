@@ -44,19 +44,19 @@ class SignInFragment : Fragment() {
 
 
 
-        binding.buttonCreate.setOnClickListener {
-            if (validteForm()) {
-                Log.d("email", "" + userEmail)
-                viewModel.getData(userEmail, pass)
-                viewModel.loginSuccess.observe(viewLifecycleOwner) {
-                    if (it!!) {
-                        Toast.makeText(requireContext(), "done for email", Toast.LENGTH_LONG)
-                            .show()
-                        // findNavController().navigate(R.id.)
-                    }
-                }
-            }
-        }
+//        binding.buttonCreate.setOnClickListener {
+//            if (validteForm()) {
+//                Log.d("email", "" + userEmail)
+//                viewModel.getData(userEmail, pass)
+//                viewModel.loginSuccess.observe(viewLifecycleOwner) {
+//                    if (it!!) {
+//                        Toast.makeText(requireContext(), "done for email", Toast.LENGTH_LONG)
+//                            .show()
+//                        // findNavController().navigate(R.id.)
+//                    }
+//                }
+//            }
+//        }
 
     }
 
@@ -83,6 +83,9 @@ class SignInFragment : Fragment() {
                     if (it!!) {
                         Toast.makeText(requireContext(), "Successfully Login", Toast.LENGTH_LONG)
                             .show()
+                        meFragment = MeFragment()
+                        activity?.supportFragmentManager?.beginTransaction()
+                            ?.replace(R.id.fragment_container, meFragment)?.commit()
                     }
                 }
             }

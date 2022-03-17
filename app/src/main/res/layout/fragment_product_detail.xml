@@ -8,7 +8,7 @@
     <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".ui.ProductDetails.ProductDetailsFragment"
+        tools:context=".ui.productDetailsActivity.ProductDetailActivity"
         android:background="#f6f6f6">
 
         <ScrollView
@@ -20,7 +20,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:paddingBottom="60dp"
-                tools:context=".ui.productDetailsActivity.ProductDetailsActivity">
+                >
                 <androidx.appcompat.widget.Toolbar
                     android:id="@+id/toolbar"
                     app:layout_constraintVertical_weight="1"
@@ -286,19 +286,18 @@
                             android:contentDescription="Add to Wish list" />
 
                         <Button
-                            android:layout_gravity="center"
-                            android:layout_marginEnd="20dp"
-                            android:layout_weight="4"
                             android:id="@+id/addToCart"
                             style="@style/myButton"
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
-
+                            android:layout_gravity="center"
+                            android:layout_marginEnd="20dp"
+                            android:layout_weight="4"
                             android:text="Add To Cart"
                             android:textAllCaps="true"
                             android:textColor="@color/white"
                             android:textSize="16sp"
-                            android:textStyle="bold"/>
+                            android:textStyle="bold" />
                     </LinearLayout>
                 </LinearLayout>
 

@@ -8,6 +8,7 @@ import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
 import com.example.ecommerce.R
 import com.example.ecommerce.databinding.FragmentCBinding
+import com.example.ui.fragment.chart.CartFragment
 import com.example.ui.fragment.favorite.FavoriteFragment
 import com.ogaclejapan.smarttablayout.utils.v4.FragmentPagerItemAdapter
 import com.ogaclejapan.smarttablayout.utils.v4.FragmentPagerItems
@@ -16,6 +17,7 @@ import com.ogaclejapan.smarttablayout.utils.v4.FragmentPagerItems
 class CategoryFragment : Fragment() {
     lateinit var favFragment: FavoriteFragment
     lateinit var binding:FragmentCBinding
+    lateinit var cartFragment:CartFragment
 
 
     override fun onCreateView(
@@ -48,6 +50,11 @@ class CategoryFragment : Fragment() {
             favFragment= FavoriteFragment()
             activity?.supportFragmentManager?.beginTransaction()
                 ?.replace(R.id.fragment_container, favFragment)?.commit()
+        }
+        binding.toCart.setOnClickListener {
+            cartFragment = CartFragment()
+            activity?.supportFragmentManager?.beginTransaction()
+                ?.replace(R.id.fragment_container, cartFragment)?.commit()
         }
     }
     }

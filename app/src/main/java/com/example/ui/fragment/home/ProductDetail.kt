@@ -2,7 +2,9 @@ package com.example.ui.fragment.home
 
 import android.os.Bundle
 import android.view.View
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.content.ContentProviderCompat.requireContext
 import androidx.lifecycle.ViewModelProvider
 import com.example.ui.activity.MainActivity
 import com.example.ecommerce.databinding.FragmentProductDetailBinding
@@ -19,6 +21,7 @@ class ProductDetail : AppCompatActivity() {
     private lateinit var pagerAdapter: PagerAdapter
     private lateinit var addToCard: AddtoCard
     private lateinit var favorite: FavoriteProduct
+    private lateinit var cart: CartProductData
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -40,9 +43,9 @@ class ProductDetail : AppCompatActivity() {
             binding.prise.text = it.product!!.variants[0].price
 //            binding.viewPagerMain.adapter=pagerAdapter
             var product = it.product
-            binding.addToCart.setOnClickListener {
-                product?.let { it1 -> (this as MainActivity).addtoCard(it1) }
-            }
+//            binding.addToCart.setOnClickListener {
+//                product?.let { it1 -> (this as MainActivity).addtoCard(it1) }
+//            }
 
 
 
@@ -55,19 +58,39 @@ class ProductDetail : AppCompatActivity() {
                 1
 
             )
+            cart = CartProductData(
+                product?.id!!,
+                product.image?.src!!,
+                product?.title!!,
+                product.variants?.get(0).price!!,
+                product.variants.get(0).inventoryQuantity!!,
+                1
+            )
 
         })
         binding.addToWishList.setOnClickListener {
             brandViewModel.insert(favorite)
+            Toast.makeText(this, "add is sucess", Toast.LENGTH_LONG)
+                .show()
         }
 
-        binding.addToCart.setOnClickListener {
-//            bindCart()
-        }
+//        binding.addToCart.setOnClickListener {
+//            Toast.makeText(this, "add is sucess", Toast.LENGTH_LONG)
+//                .show()
+//            brandViewModel.insertTocart(cart)
+//        }
+        binding.addToCart.setOnClickListener(View.OnClickListener {
+            Toast.makeText(this, "add is done", Toast.LENGTH_LONG)
+                .show()
+            brandViewModel.insertTocart(cart)
+        })
+
+
 
     }
 
-    private fun bindCart() {
+
+//    private fun bindCart() {
 //        val cartitem = CartProductData(
 //            product.id,
 //            sharedPref.getUserInfo().customer?.customerId,
@@ -87,7 +110,7 @@ class ProductDetail : AppCompatActivity() {
 //            ).show()
 //        }
 //    }
-
-
-    }
+//
+//
+//    }
 }
