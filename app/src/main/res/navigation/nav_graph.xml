@@ -50,6 +50,15 @@
             app:destination="@id/saleFragment" />
     </fragment>
     <fragment
+        android:id="@+id/sale"
+        android:name="com.example.ui.fragment.category.SaleFilterFragment"
+        android:label="fragment_sale_filter"
+        tools:layout="@layout/fragment_sale_filter" >
+        <action
+            android:id="@+id/action_saleFilterFragment_to_saleFragment"
+            app:destination="@id/saleFragment" />
+    </fragment>
+    <fragment
         android:id="@+id/saleFragment"
         android:name="com.example.ui.fragment.category.SaleFragment"
         android:label="fragment_sale"
@@ -58,6 +67,24 @@
             android:id="@+id/action_saleFragment_to_saleFilterFragment"
             app:destination="@id/saleFilterFragment" />
     </fragment>
+    <fragment
+        android:id="@+id/setting_fragment"
+        android:name="com.example.ui.SettingFragment"
+        android:label="fragment_setting"
+        tools:layout="@layout/fragment_setting" >
+
+        <action
+            android:id="@+id/action_setting_fragment_to_aboutUsFragment"
+            app:destination="@id/aboutUsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/aboutUsFragment"
+        android:name="com.example.ui.settings.AboutFragment"
+        android:label="fragment_about"
+        tools:layout="@layout/fragment_about" >
+
+    </fragment>
+
     <fragment
         android:id="@+id/womanFragment"
         android:name="com.example.ui.fragment.category.WomanFragment"

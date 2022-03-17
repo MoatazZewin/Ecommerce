@@ -6,6 +6,14 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.example.ecommerce.R
+import com.example.ecommerce.databinding.FragmentAboutBinding
+import com.example.ecommerce.databinding.FragmentSettingBinding
+import com.example.ecommerce.databinding.FragmentWomanBinding
+import com.example.ui.fragment.ContactUsFragment
+import com.example.ui.fragment.category.WomanFilterFragment
+import com.example.ui.fragment.profile.AuthRepo
+import com.example.ui.fragment.profile.SharedPreferencesProvider
+import com.example.ui.settings.AboutFragment
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -18,6 +26,12 @@ private const val ARG_PARAM2 = "param2"
  * create an instance of this fragment.
  */
 class SettingFragment : Fragment() {
+    private lateinit var _binding: FragmentSettingBinding
+    private  var about=AboutFragment()
+    private  var contact=ContactUsFragment()
+    private  var auth:AuthRepo?=null
+    private var setting :SharedPreferencesProvider?=null
+
     // TODO: Rename and change types of parameters
     private var param1: String? = null
     private var param2: String? = null
@@ -34,27 +48,34 @@ class SettingFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
+
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_setting, container, false)
+        inflater.inflate(R.layout.fragment_setting, container, false)
+        _binding = FragmentSettingBinding.inflate(inflater, container, false)
+        return _binding.root
     }
 
-    companion object {
-        /**
-         * Use this factory method to create a new instance of
-         * this fragment using the provided parameters.
-         *
-         * @param param1 Parameter 1.
-         * @param param2 Parameter 2.
-         * @return A new instance of fragment SettingFragment.
-         */
-        // TODO: Rename and change types and number of parameters
-        @JvmStatic
-        fun newInstance(param1: String, param2: String) =
-            SettingFragment().apply {
-                arguments = Bundle().apply {
-                    putString(ARG_PARAM1, param1)
-                    putString(ARG_PARAM2, param2)
-                }
-            }
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        _binding!!.aboutUsBtn.setOnClickListener {
+            about = AboutFragment()
+            activity?.supportFragmentManager?.beginTransaction()
+                ?.replace(R.id.fragment_container,about )?.commit()
+        }
+        _binding!!.contactUSBtn.setOnClickListener {
+            activity?.supportFragmentManager?.beginTransaction()
+                ?.replace(R.id.fragment_container,contact )?.commit()
+
+        }
+        _binding.signout.setOnClickListener {
+           auth!!.sharedPref.update {
+               it.copy(
+                   customer = null
+               )
+           }
+        }
+
+
     }
-}
+
+    }
