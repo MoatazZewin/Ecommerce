@@ -107,6 +107,6 @@
             android:layout_gravity="center"
             android:layout_height="wrap_content"
             style="@style/myButton"
-            android:text="Button" />
+            android:text="Login" />
     </FrameLayout>
 </layout>

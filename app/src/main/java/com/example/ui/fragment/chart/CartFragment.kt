@@ -18,6 +18,7 @@ import com.example.ecommerce.databinding.FragmentChartBinding
 import com.example.ui.fragment.favorite.FavoriteAdapter
 import com.example.ui.fragment.favorite.FavoriteViewModel
 import com.example.ui.fragment.profile.AuthRepo
+import com.example.ui.fragment.profile.SignInFragment
 
 
 class CartFragment : Fragment() {
@@ -27,6 +28,7 @@ class CartFragment : Fragment() {
     //    private lateinit var viewModel: FavoriteViewModel
     private lateinit var homeFragment: HomeFragment
     private lateinit var cartAdapter: CartAdapter
+    private lateinit var singinFragment:SignInFragment
     val viewModel by lazy {
         CartViewModel.create(this)
     }
@@ -49,6 +51,10 @@ class CartFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         binding.leftIconInLogin.setOnClickListener {
             activity?.supportFragmentManager?.beginTransaction()?.replace(R.id.fragment_container, homeFragment)?.commit()
+        }
+        singinFragment = SignInFragment()
+        binding.buttonSingin.setOnClickListener{
+            activity?.supportFragmentManager?.beginTransaction()?.replace(R.id.fragment_container, singinFragment)?.commit()
         }
         if (viewModel.repo.sharedPref.getSettings().customer == null)
         {

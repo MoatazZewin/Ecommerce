@@ -15,6 +15,8 @@ import com.example.ecommerce.HomeFragment
 import com.example.ecommerce.R
 import com.example.ecommerce.databinding.FragmentAllWishListBinding
 import com.example.ui.fragment.profile.AuthRepo
+import com.example.ui.fragment.profile.ConfirmSinginFragment
+import com.example.ui.fragment.profile.SignInFragment
 
 class FavoriteFragment  : Fragment(){
     private lateinit var application: Application
@@ -23,6 +25,7 @@ class FavoriteFragment  : Fragment(){
 //    private lateinit var viewModel: FavoriteViewModel
     private lateinit var favAdapter: FavoriteAdapter
     private lateinit var homeFragment:HomeFragment
+    private lateinit var singinFragment: SignInFragment
     val viewModel by lazy {
         FavoriteViewModel.create(this)
     }
@@ -50,6 +53,10 @@ class FavoriteFragment  : Fragment(){
         {
             binding.Login.visibility = View.GONE
             binding.notLogin.visibility = View.VISIBLE
+            singinFragment = SignInFragment()
+            binding.buttonSingin.setOnClickListener{
+                activity?.supportFragmentManager?.beginTransaction()?.replace(R.id.fragment_container, singinFragment)?.commit()
+            }
         }else
         {
             binding.Login.visibility = View.VISIBLE

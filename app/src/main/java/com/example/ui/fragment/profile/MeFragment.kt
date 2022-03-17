@@ -10,12 +10,19 @@ import androidx.navigation.fragment.findNavController
 import com.example.ecommerce.R
 import com.example.ecommerce.databinding.FragmentMeBinding
 import com.example.ui.fragment.ProductFragment
+import com.example.ui.fragment.SettingFragment
+import com.example.ui.fragment.chart.CartFragment
+import com.example.ui.fragment.favorite.FavoriteFragment
 import com.example.ui.fragment.favorite.FavoriteViewModel
 
 
 class MeFragment : Fragment() {
     lateinit var binding: FragmentMeBinding
     lateinit var proudectFragment: SignInFragment
+    lateinit var favFragment:FavoriteFragment
+    lateinit var  cartFragment : CartFragment
+    lateinit var  settingFragment : SettingFragment
+
     val viewModel by lazy {
         FavoriteViewModel.create(this)
     }
@@ -39,6 +46,7 @@ class MeFragment : Fragment() {
 
 
             }
+        click()
 
         if(viewModel.repo.sharedPref.getSettings().customer == null)
         {
@@ -50,6 +58,24 @@ class MeFragment : Fragment() {
             binding.txtName.setText("hi, "+viewModel.repo.sharedPref.getSettings().customer!!.firstName)
         }
         }
+    fun click(){
+        binding.toFav.setOnClickListener {
+            favFragment= FavoriteFragment()
+            activity?.supportFragmentManager?.beginTransaction()
+                ?.replace(R.id.fragment_container, favFragment)?.commit()
+        }
+        binding.toCart.setOnClickListener{
+            cartFragment = CartFragment()
+            activity?.supportFragmentManager?.beginTransaction()
+                ?.replace(R.id.fragment_container, cartFragment)?.commit()
+        }
+        binding.toSettings.setOnClickListener {
+            settingFragment = SettingFragment()
+            activity?.supportFragmentManager?.beginTransaction()
+                ?.replace(R.id.fragment_container, settingFragment)?.commit()
+        }
+
+    }
 
 
 

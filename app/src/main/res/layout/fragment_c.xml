@@ -44,7 +44,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="110dp"
+                    android:layout_marginStart="70dp"
                     android:background="@color/black"
                     android:text="Category"
                     android:textColor="@color/white"
@@ -68,7 +68,8 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="10dp"
-                    android:src="@drawable/ic_baseline_settingss" />
+                    android:src="@drawable/ic_baseline_settings_24"
+                    />
             </androidx.appcompat.widget.Toolbar>
 
             <com.ogaclejapan.smarttablayout.SmartTabLayout
