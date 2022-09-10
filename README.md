@@ -3,21 +3,34 @@ application that turns a Shopify-based store into a mobile app. Mercato syncs wi
 
 
 ## Requirements
-###### Android studio last version
-###### JDK 8
-###### Android SDK 32
-###### Supports API Level +26
+Android studio last version
+
+JDK 8
+
+Android SDK 32
+
+Supports API Level +26
 
 
 ## Libraries and tools
 
-###### Shared Preferences
-###### viewModel
-###### LiveData
-###### coroutine
-###### View Binding
-###### RoomDB
-###### Retrofit
-###### OkHttp
-###### Glide
-###### Material Design
+Shared Preferences
+
+viewModel
+
+LiveData
+
+coroutine
+
+View Binding
+
+RoomDB
+
+Retrofit
+
+OkHttp
+
+Glide
+
+Material Design
+
